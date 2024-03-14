@@ -27,7 +27,7 @@ function send(key) {
     };
 
     // データの送信
-    xhr.send(data);
+    xhr.send();
 }
 
 
