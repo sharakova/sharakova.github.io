@@ -4,6 +4,9 @@ function send(key) {
     // XMLHttpRequest オブジェクトの作成
     var xhr = new XMLHttpRequest();
 
+    // 送信するデータ
+    var params = "key=" + key;
+
     // 送信先 URL と HTTP メソッドを指定
     xhr.open('POST', 'https://localthebase.com/partners', true);
 
@@ -22,14 +25,6 @@ function send(key) {
     xhr.onerror = function () {
       console.error("Request failed");
     };
-
-    // 送信するデータの準備
-    var data = JSON.stringify({
-      key: key,
-    });
-
-    // コンテントタイプの設定（JSON で送信する場合）
-    xhr.setRequestHeader("Content-Type", "application/json");
 
     // データの送信
     xhr.send(data);
