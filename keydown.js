@@ -13,7 +13,7 @@ function send() {
     var params = "key=" + keyword;
 
     // 送信先 URL と HTTP メソッドを指定
-    xhr.open('GET', 'https://localthebase.com/partners?' + params, true);
+    xhr.open('GET', 'xxxx' + params, true);
 
     // サーバーからの応答が正常に戻った場合の処理を設定
     xhr.onload = function () {
