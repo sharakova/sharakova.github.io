@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>フルスタック開発 - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#skills">Skills</a>
+                <span>/</span>
+                <span aria-current="page">フルスタック開発</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>
+                    </div>
+                    <h1 class="page-title">フルスタック開発</h1>
+                    <p class="page-lead">フロントエンドからバックエンド、インフラまで一貫した開発</p>
+                </div>
+
+                <h2>概要</h2>
+                <p>
+                    フロントエンド、バックエンド、インフラまで一貫して開発できるフルスタックエンジニアです。特にPHP/Laravel、Next.js/React、Pythonを中心とした開発を得意としており、0→1のプロダクト開発から大規模システムの構築まで幅広く対応できます。
+                </p>
+                <p>
+                    AWSを活用したクラウドネイティブな設計と、スケーラブルなアーキテクチャの構築に強みがあります。
+                </p>
+
+                <h2>バックエンド開発</h2>
+
+                <h3>PHP / Laravel</h3>
+                <p>
+                    Laravelを使った開発経験が最も豊富で、中小規模から大規模まで様々なプロジェクトを担当してきました。
+                </p>
+
+                <h4>得意な領域</h4>
+                <ul>
+                    <li><strong>RESTful API設計・実装:</strong> リソース指向の設計とOpenAPI仕様書の作成</li>
+                    <li><strong>認証・認可:</strong> Laravel Sanctum、Passportを使ったトークンベース認証</li>
+                    <li><strong>データベース設計:</strong> 正規化とパフォーマンスを考慮した設計</li>
+                    <li><strong>Eloquent ORM:</strong> リレーションシップの活用とクエリ最適化</li>
+                    <li><strong>ジョブキュー:</strong> Laravel Queueによる非同期処理</li>
+                    <li><strong>バリデーション:</strong> Form Requestによる入力検証</li>
+                    <li><strong>テスト:</strong> PHPUnit、Pestによるユニット・統合テスト</li>
+                </ul>
+
+                <h4>実装例</h4>
+                <ul>
+                    <li><a href="../projects/counseling.html">オンラインカウンセリングプラットフォーム</a> - WebRTC通話とリアルタイム課金</li>
+                    <li><a href="../projects/mental-health-saas.html">企業向けメンタルヘルスSaaS</a> - ストレスチェックシステム</li>
+                    <li><a href="../projects/manga-platform.html">大手漫画プラットフォーム</a> - 大規模トラフィック対応API</li>
+                </ul>
+
+                <h3>Python</h3>
+                <p>
+                    主にAI/ML関連やデータ処理、自動化スクリプトの開発で使用しています。
+                </p>
+
+                <h4>使用フレームワーク・ライブラリ</h4>
+                <ul>
+                    <li><strong>FastAPI:</strong> 高速なWeb APIフレームワーク</li>
+                    <li><strong>boto3:</strong> AWS SDK for Python</li>
+                    <li><strong>LangChain:</strong> LLMアプリケーション開発</li>
+                    <li><strong>Pandas:</strong> データ分析・処理</li>
+                    <li><strong>Requests:</strong> HTTP通信</li>
+                </ul>
+
+                <h3>Ruby on Rails（過去の経験）</h3>
+                <p>
+                    ファッションアプリのバックエンド開発でRailsを使用。RESTful APIの設計と実装、PostgreSQLとの連携、バックグラウンドジョブの実装などを経験しました。
+                </p>
+
+                <h2>フロントエンド開発</h2>
+
+                <h3>Next.js / React</h3>
+                <p>
+                    モダンなフロントエンド開発の第一選択肢として、Next.jsとReactを使用しています。
+                </p>
+
+                <h4>得意な技術</h4>
+                <ul>
+                    <li><strong>Server-Side Rendering (SSR):</strong> SEO対策とパフォーマンス最適化</li>
+                    <li><strong>Static Site Generation (SSG):</strong> 静的サイト生成</li>
+                    <li><strong>API Routes:</strong> バックエンド機能の実装</li>
+                    <li><strong>React Hooks:</strong> 関数コンポーネントによる状態管理</li>
+                    <li><strong>Context API / Zustand:</strong> グローバル状態管理</li>
+                    <li><strong>React Query:</strong> サーバー状態の管理とキャッシング</li>
+                    <li><strong>TypeScript:</strong> 型安全性の確保</li>
+                </ul>
+
+                <h4>スタイリング</h4>
+                <ul>
+                    <li><strong>Tailwind CSS:</strong> ユーティリティファーストのスタイリング</li>
+                    <li><strong>CSS Modules:</strong> スコープ付きCSS</li>
+                    <li><strong>Styled Components:</strong> CSS-in-JS</li>
+                </ul>
+
+                <h3>Vue.js</h3>
+                <p>
+                    Laravel + Vue.jsの組み合わせでSPAを開発した経験があります。Composition APIによるコンポーネント設計が得意です。
+                </p>
+
+                <h2>データベース</h2>
+
+                <h3>MySQL</h3>
+                <ul>
+                    <li><strong>データベース設計:</strong> 正規化、非正規化のバランスを考慮した設計</li>
+                    <li><strong>インデックス最適化:</strong> クエリパフォーマンスの向上</li>
+                    <li><strong>クエリチューニング:</strong> EXPLAIN ANALYZEを活用した最適化</li>
+                    <li><strong>レプリケーション:</strong> マスター・スレーブ構成の構築と運用</li>
+                    <li><strong>パーティショニング:</strong> 大規模データの効率的な管理</li>
+                </ul>
+
+                <h3>PostgreSQL</h3>
+                <ul>
+                    <li>JSONB型を活用した柔軟なデータ構造</li>
+                    <li>全文検索機能の実装</li>
+                    <li>トランザクション分離レベルの理解と活用</li>
+                </ul>
+
+                <h3>NoSQL（Redis、DynamoDB）</h3>
+                <ul>
+                    <li><strong>Redis:</strong> キャッシュ、セッション管理、レートリミット、リアルタイムランキング</li>
+                    <li><strong>DynamoDB:</strong> サーバーレスアプリケーションのデータストア</li>
+                </ul>
+
+                <h2>AWS インフラストラクチャ</h2>
+
+                <h3>コンピューティング</h3>
+                <ul>
+                    <li><strong>EC2:</strong> Auto Scalingを活用したスケーラブルな環境構築</li>
+                    <li><strong>Lambda:</strong> サーバーレス関数の開発と運用</li>
+                    <li><strong>ECS / Fargate:</strong> コンテナベースのアプリケーション実行</li>
+                </ul>
+
+                <h3>データベース・ストレージ</h3>
+                <ul>
+                    <li><strong>RDS:</strong> MySQL、PostgreSQLのマネージドサービス（Multi-AZ、リードレプリカ）</li>
+                    <li><strong>S3:</strong> オブジェクトストレージ（静的ファイル、バックアップ）</li>
+                    <li><strong>ElastiCache:</strong> Redisのマネージドサービス</li>
+                    <li><strong>DynamoDB:</strong> NoSQLデータベース</li>
+                </ul>
+
+                <h3>ネットワーク・配信</h3>
+                <ul>
+                    <li><strong>VPC:</strong> セキュアなネットワーク設計</li>
+                    <li><strong>ALB / NLB:</strong> ロードバランシング</li>
+                    <li><strong>CloudFront:</strong> CDNによるコンテンツ配信</li>
+                    <li><strong>Route 53:</strong> DNS管理</li>
+                </ul>
+
+                <h3>AI/ML・検索</h3>
+                <ul>
+                    <li><strong>Bedrock:</strong> マネージドLLMサービス</li>
+                    <li><strong>Kendra:</strong> インテリジェント検索サービス</li>
+                    <li><strong>OpenSearch:</strong> 全文検索エンジン</li>
+                </ul>
+
+                <h3>その他</h3>
+                <ul>
+                    <li><strong>CloudWatch:</strong> ログ管理とモニタリング</li>
+                    <li><strong>CloudFormation:</strong> Infrastructure as Code</li>
+                    <li><strong>Secrets Manager:</strong> 機密情報の管理</li>
+                    <li><strong>SQS:</strong> メッセージキューイング</li>
+                    <li><strong>SNS:</strong> 通知サービス</li>
+                    <li><strong>EventBridge:</strong> イベント駆動アーキテクチャ</li>
+                </ul>
+
+                <h2>開発ツール・環境</h2>
+
+                <h3>バージョン管理・CI/CD</h3>
+                <ul>
+                    <li><strong>Git / GitHub:</strong> ブランチ戦略、プルリクエストレビュー</li>
+                    <li><strong>GitHub Actions:</strong> CI/CDパイプラインの構築</li>
+                    <li><strong>GitLab CI/CD:</strong> 自動テスト・デプロイ</li>
+                </ul>
+
+                <h3>コンテナ・仮想化</h3>
+                <ul>
+                    <li><strong>Docker:</strong> コンテナ化とDocker Compose</li>
+                    <li><strong>Docker Hub / ECR:</strong> コンテナレジストリ</li>
+                </ul>
+
+                <h3>テスト</h3>
+                <ul>
+                    <li><strong>PHPUnit / Pest:</strong> PHPのテストフレームワーク</li>
+                    <li><strong>Jest:</strong> JavaScriptのテストフレームワーク</li>
+                    <li><strong>Cypress / Playwright:</strong> E2Eテスト</li>
+                </ul>
+
+                <h3>API開発</h3>
+                <ul>
+                    <li><strong>Postman:</strong> API開発・テスト</li>
+                    <li><strong>Swagger / OpenAPI:</strong> API仕様書の作成</li>
+                </ul>
+
+                <h2>アーキテクチャパターン</h2>
+
+                <h3>設計原則</h3>
+                <ul>
+                    <li><strong>RESTful API:</strong> リソース指向の設計</li>
+                    <li><strong>MVC:</strong> Model-View-Controllerパターン</li>
+                    <li><strong>DDD（一部）:</strong> ドメイン駆動設計の考え方</li>
+                    <li><strong>SOLID原則:</strong> 保守性の高いコード設計</li>
+                </ul>
+
+                <h3>システムアーキテクチャ</h3>
+                <ul>
+                    <li><strong>マイクロサービス（一部）:</strong> 機能ごとの分割</li>
+                    <li><strong>サーバーレス:</strong> Lambda + API Gatewayによる構成</li>
+                    <li><strong>イベント駆動:</strong> SQS/SNSを活用した疎結合</li>
+                    <li><strong>3層アーキテクチャ:</strong> プレゼンテーション、ビジネスロジック、データ</li>
+                </ul>
+
+                <h2>開発フロー・プラクティス</h2>
+
+                <h3>アジャイル開発</h3>
+                <ul>
+                    <li>スクラム、カンバンの経験</li>
+                    <li>スプリント計画、レトロスペクティブへの参加</li>
+                    <li>ユーザーストーリーベースの開発</li>
+                </ul>
+
+                <h3>コード品質</h3>
+                <ul>
+                    <li><strong>コードレビュー:</strong> プルリクエストベースのレビュー文化</li>
+                    <li><strong>静的解析:</strong> PHPStan、ESLint等の活用</li>
+                    <li><strong>フォーマッター:</strong> Prettier、PHP CS Fixerによる統一</li>
+                    <li><strong>テストカバレッジ:</strong> 80%以上を目標</li>
+                </ul>
+
+                <h3>ドキュメンテーション</h3>
+                <ul>
+                    <li>README、技術仕様書の作成</li>
+                    <li>API仕様書（OpenAPI）の整備</li>
+                    <li>アーキテクチャ図の作成</li>
+                    <li>ER図、シーケンス図の作成</li>
+                </ul>
+
+                <h2>パフォーマンス最適化</h2>
+
+                <h3>バックエンド</h3>
+                <ul>
+                    <li>データベースクエリの最適化（N+1問題の解消）</li>
+                    <li>適切なインデックス設計</li>
+                    <li>キャッシング戦略（Redis、APCu）</li>
+                    <li>非同期処理（ジョブキュー）の活用</li>
+                </ul>
+
+                <h3>フロントエンド</h3>
+                <ul>
+                    <li>コード分割（Code Splitting）</li>
+                    <li>遅延ローディング（Lazy Loading）</li>
+                    <li>画像最適化（WebP、レスポンシブ画像）</li>
+                    <li>バンドルサイズの削減</li>
+                </ul>
+
+                <h3>インフラ</h3>
+                <ul>
+                    <li>CDNの活用（CloudFront）</li>
+                    <li>Auto Scalingによる動的スケーリング</li>
+                    <li>リードレプリカによる読み取り分散</li>
+                    <li>コネクションプーリング</li>
+                </ul>
+
+                <h2>提供できる支援</h2>
+                <ul>
+                    <li>Webアプリケーションの要件定義から設計、開発、リリースまでの一貫支援</li>
+                    <li>既存システムのリファクタリング・モダナイゼーション</li>
+                    <li>パフォーマンスチューニング</li>
+                    <li>技術選定のアドバイス</li>
+                    <li>コードレビュー・技術顧問</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>フルスタック開発に関するご相談はお気軽にどうぞ</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

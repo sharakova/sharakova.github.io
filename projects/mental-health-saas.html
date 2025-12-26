@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>企業向けメンタルヘルスSaaS - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span aria-current="page">企業向けメンタルヘルスSaaS</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-building"></use></svg>
+                    </div>
+                    <h1 class="page-title">企業向けメンタルヘルスSaaS</h1>
+                    <p class="page-lead">中小企業の健康経営を包括的にサポート</p>
+                    <div class="tags page-tags">
+                        <span class="tag">SaaS</span>
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">健康経営</span>
+                    </div>
+                </div>
+
+                <h2>プロジェクト概要</h2>
+                <p>
+                    50人未満の中小企業向けに、ストレスチェックの実施、従業員へのカウンセリング提供、健康経営優良法人認定の取得サポートをワンストップで提供するSaaSプラットフォームを開発しました。
+                </p>
+                <p>
+                    中小企業では、法令で義務付けられたストレスチェックの実施や、従業員のメンタルヘルスケアに関するリソースが不足しています。本サービスは、これらの課題を一括で解決し、企業の健康経営を実現するための包括的なソリューションを提供します。
+                </p>
+
+                <h2>サービスの特徴</h2>
+
+                <h3>ストレスチェック機能</h3>
+                <ul>
+                    <li>厚生労働省が推奨する57項目の質問票をベースにしたWeb実施システム</li>
+                    <li>従業員は匿名性を保ちながらオンラインで回答可能</li>
+                    <li>自動集計・分析により、企業全体のストレス状況を可視化</li>
+                    <li>高ストレス者への自動通知とフォローアップ機能</li>
+                    <li>産業医への報告書自動生成</li>
+                </ul>
+
+                <h3>従業員カウンセリング</h3>
+                <ul>
+                    <li>オンラインカウンセリングプラットフォームとの統合</li>
+                    <li>企業が従業員に対してカウンセリング利用枠を提供</li>
+                    <li>利用状況のダッシュボード表示（個人情報は保護）</li>
+                    <li>企業負担の柔軟な設定（全額負担、一部負担など）</li>
+                </ul>
+
+                <h3>健康経営優良法人認定サポート</h3>
+                <ul>
+                    <li>認定要件のチェックリスト機能</li>
+                    <li>必要な取り組みのステップバイステップガイド</li>
+                    <li>申請書類の自動生成支援</li>
+                    <li>認定取得に向けたコンサルティングサポート</li>
+                </ul>
+
+                <h3>管理者向けダッシュボード</h3>
+                <ul>
+                    <li>企業全体のメンタルヘルス状況を可視化</li>
+                    <li>部署別・年代別の分析レポート</li>
+                    <li>法令遵守状況の確認</li>
+                    <li>カウンセリング利用状況の把握</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+
+                <h3>バックエンド</h3>
+                <ul>
+                    <li><strong>PHP / Laravel:</strong> RESTful API、管理画面の実装</li>
+                    <li><strong>MySQL:</strong> 企業情報、ユーザー情報、ストレスチェック結果の管理</li>
+                    <li><strong>Redis:</strong> セッション管理とキャッシング</li>
+                    <li><strong>Laravel Queue:</strong> ストレスチェック集計などのバックグラウンド処理</li>
+                </ul>
+
+                <h3>フロントエンド</h3>
+                <ul>
+                    <li><strong>Vue.js:</strong> インタラクティブなダッシュボードUI</li>
+                    <li><strong>Chart.js:</strong> データ可視化（グラフ・チャート）</li>
+                    <li><strong>Tailwind CSS:</strong> モダンで保守性の高いスタイリング</li>
+                </ul>
+
+                <h3>インフラ</h3>
+                <ul>
+                    <li><strong>AWS EC2:</strong> アプリケーションサーバー</li>
+                    <li><strong>AWS RDS:</strong> データベース（Multi-AZ構成で冗長性確保）</li>
+                    <li><strong>AWS S3:</strong> レポートファイルの保管</li>
+                    <li><strong>AWS CloudWatch:</strong> ログ管理とアラート</li>
+                </ul>
+
+                <h2>主要機能の実装</h2>
+
+                <h3>1. ストレスチェック実施システム</h3>
+                <p>
+                    厚生労働省の基準に準拠したストレスチェックを実施するシステムを構築。従業員は匿名でWeb上から回答し、結果は暗号化してデータベースに保存されます。
+                </p>
+                <p>
+                    管理者は、個人が特定できない形で集団分析結果を閲覧可能。高ストレス者には自動で医師面接の案内が送信され、適切なフォローアップが行われる仕組みを実装しました。
+                </p>
+
+                <h3>2. 自動レポート生成機能</h3>
+                <p>
+                    ストレスチェック実施後、自動で以下のレポートを生成：
+                </p>
+                <ul>
+                    <li>企業全体の集団分析レポート</li>
+                    <li>部署別・年代別の比較分析</li>
+                    <li>前回実施時との経年比較</li>
+                    <li>産業医向けの報告書</li>
+                </ul>
+                <p>
+                    PDFとしてエクスポート可能で、社内資料や産業医への提出資料として活用できます。
+                </p>
+
+                <h3>3. カウンセリング統合機能</h3>
+                <p>
+                    オンラインカウンセリングプラットフォームとAPI連携し、企業管理者が従業員にカウンセリング利用枠を提供できる仕組みを実装。従業員は専用のダッシュボードから簡単にカウンセリングを予約・利用できます。
+                </p>
+
+                <h3>4. 健康経営認定支援機能</h3>
+                <p>
+                    健康経営優良法人認定の要件を満たすための取り組みをステップバイステップでガイド。現在の達成状況を可視化し、不足している項目を明確に表示します。必要な証拠書類のテンプレートも提供し、申請プロセスを大幅に簡素化しました。
+                </p>
+
+                <h2>セキュリティとコンプライアンス</h2>
+
+                <h3>個人情報保護</h3>
+                <ul>
+                    <li>ストレスチェック結果は暗号化して保存</li>
+                    <li>管理者は個人を特定できない集団分析結果のみ閲覧可能</li>
+                    <li>本人同意なしには結果を開示しない仕組みを実装</li>
+                    <li>データは法令で定められた期間適切に管理</li>
+                </ul>
+
+                <h3>法令遵守</h3>
+                <ul>
+                    <li>労働安全衛生法に準拠したストレスチェック実施</li>
+                    <li>個人情報保護法に準拠したデータ管理</li>
+                    <li>定期的な監査とセキュリティアップデート</li>
+                </ul>
+
+                <h2>開発における課題と解決策</h2>
+
+                <h3>課題1: 匿名性の担保</h3>
+                <p>
+                    <strong>課題:</strong> ストレスチェック結果の匿名性を担保しつつ、高ストレス者へのフォローアップを実現する必要があった
+                </p>
+                <p>
+                    <strong>解決策:</strong> 結果データと個人情報を分離し、本人のみがアクセスできるトークンベースの仕組みを実装。管理者は統計データのみ閲覧可能とし、個人特定を不可能にしました。
+                </p>
+
+                <h3>課題2: 複雑な集計ロジック</h3>
+                <p>
+                    <strong>課題:</strong> 部署別・年代別・性別など多軸での分析が必要で、集計処理が複雑
+                </p>
+                <p>
+                    <strong>解決策:</strong> Laravel Queueを活用したバックグラウンド処理と、適切なデータベースインデックス設計により、大規模なデータでも高速に集計できる仕組みを実現しました。
+                </p>
+
+                <h2>プロジェクトの成果</h2>
+                <ul>
+                    <li>サービス開始から1年で50社以上が導入</li>
+                    <li>導入企業の健康経営優良法人認定取得率80%</li>
+                    <li>従業員満足度の向上（導入企業平均15%アップ）</li>
+                    <li>ストレスチェック実施の工数を従来の1/10に削減</li>
+                    <li>複数の自治体・商工会議所から推奨サービスとして認定</li>
+                </ul>
+
+                <h2>今後の展開</h2>
+                <p>
+                    現在は50人未満の企業向けにサービスを提供していますが、今後は中堅企業向けのエンタープライズプランも展開予定です。また、AIを活用したストレス予測機能や、健康経営の改善提案機能なども開発中です。
+                </p>
+
+                <div class="cta-box">
+                    <p>このプロジェクトに興味をお持ちですか？</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

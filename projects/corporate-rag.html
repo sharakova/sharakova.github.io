@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>社内RAG質問回答システム - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span aria-current="page">社内RAG質問回答システム</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ai"></use></svg>
+                    </div>
+                    <h1 class="page-title">社内RAG質問回答システム</h1>
+                    <p class="page-lead">AIで業務効率を劇的に向上</p>
+                    <div class="tags page-tags">
+                        <span class="tag">AWS Bedrock</span>
+                        <span class="tag">Kendra</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">OpenSearch</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+
+                <h2>プロジェクト概要</h2>
+                <p>
+                    社内の分散した情報（Notion、Google Drive、Backlog、Confluenceなど）を統合し、Slackから自然言語で質問すると、AIが適切な回答を返すRAG（Retrieval-Augmented Generation）システムを開発しました。
+                </p>
+                <p>
+                    従業員が欲しい情報を見つけるのに費やしていた時間を大幅に削減し、業務効率を向上させることを目的としています。AWS BedrockとAmazon Kendraを活用し、高精度な検索と自然な回答生成を実現しました。
+                </p>
+
+                <h2>システムの特徴</h2>
+
+                <h3>マルチソースデータ統合</h3>
+                <ul>
+                    <li>Notion、Google Drive、Backlog、Confluenceなど複数のデータソースから情報を収集</li>
+                    <li>各ソースのAPIを活用した自動同期</li>
+                    <li>増分更新により、常に最新の情報を反映</li>
+                    <li>メタデータ（作成者、更新日時、カテゴリなど）も同時に取得</li>
+                </ul>
+
+                <h3>高精度な検索とRAG</h3>
+                <ul>
+                    <li>Amazon Kendraによる高度なセマンティック検索</li>
+                    <li>AWS Bedrock（Claude）を活用した自然言語生成</li>
+                    <li>関連度スコアリングによる最適な情報の抽出</li>
+                    <li>回答には情報源（ソースURL）を明記</li>
+                </ul>
+
+                <h3>Slack統合</h3>
+                <ul>
+                    <li>Slackのスラッシュコマンドやメンションで簡単に質問</li>
+                    <li>スレッド形式での対話型回答</li>
+                    <li>回答へのフィードバック機能（高評価/低評価で精度向上）</li>
+                    <li>検索履歴とよくある質問の自動集計</li>
+                </ul>
+
+                <h3>IaCとモニタリング</h3>
+                <ul>
+                    <li>CloudFormationによるインフラ構成管理</li>
+                    <li>Lambda関数の自動デプロイ</li>
+                    <li>CloudWatchによるログ監視とアラート設定</li>
+                    <li>エラー発生時の自動通知</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+
+                <h3>AI/ML</h3>
+                <ul>
+                    <li><strong>AWS Bedrock:</strong> Claude 3 Sonnetを利用した高品質な回答生成</li>
+                    <li><strong>Amazon Kendra:</strong> エンタープライズ向けインテリジェント検索サービス</li>
+                    <li><strong>Amazon OpenSearch:</strong> 補助的な全文検索エンジン</li>
+                    <li><strong>LangChain:</strong> RAGパイプラインの構築とプロンプト管理</li>
+                </ul>
+
+                <h3>バックエンド</h3>
+                <ul>
+                    <li><strong>Python:</strong> メインの開発言語</li>
+                    <li><strong>AWS Lambda:</strong> サーバーレス実行環境</li>
+                    <li><strong>Amazon SQS:</strong> 非同期処理のキューイング</li>
+                    <li><strong>Amazon DynamoDB:</strong> 検索履歴やユーザーフィードバックの保存</li>
+                </ul>
+
+                <h3>データ連携</h3>
+                <ul>
+                    <li><strong>Notion API:</strong> ページとデータベースの取得</li>
+                    <li><strong>Google Drive API:</strong> ドキュメント、スプレッドシート、PDFの取得</li>
+                    <li><strong>Backlog API:</strong> Wiki、課題、コメントの取得</li>
+                    <li><strong>Confluence API:</strong> ページとスペースの取得</li>
+                </ul>
+
+                <h3>インフラ</h3>
+                <ul>
+                    <li><strong>AWS CloudFormation:</strong> Infrastructure as Code</li>
+                    <li><strong>AWS CloudWatch:</strong> ログ管理、メトリクス監視</li>
+                    <li><strong>AWS Secrets Manager:</strong> APIキーの安全な管理</li>
+                    <li><strong>Amazon EventBridge:</strong> スケジュールトリガー</li>
+                </ul>
+
+                <h2>システムアーキテクチャ</h2>
+
+                <h3>データ収集フロー</h3>
+                <ol>
+                    <li><strong>定期実行:</strong> EventBridgeが毎時Lambda関数をトリガー</li>
+                    <li><strong>データ取得:</strong> 各データソースのAPIから情報を取得</li>
+                    <li><strong>前処理:</strong> テキスト抽出、チャンク分割、メタデータ付与</li>
+                    <li><strong>インデックス登録:</strong> Kendraにドキュメントを登録</li>
+                    <li><strong>ログ記録:</strong> CloudWatchに処理ログを出力</li>
+                </ol>
+
+                <h3>質問回答フロー</h3>
+                <ol>
+                    <li><strong>Slack入力:</strong> ユーザーがSlackで質問</li>
+                    <li><strong>API Gateway:</strong> Slack Eventsを受信</li>
+                    <li><strong>Lambda処理:</strong> 質問文を解析し、Kendraで検索</li>
+                    <li><strong>RAG処理:</strong> 検索結果をコンテキストとしてBedrockに渡し、回答生成</li>
+                    <li><strong>Slack返信:</strong> 生成された回答とソースURLをSlackに投稿</li>
+                    <li><strong>フィードバック収集:</strong> リアクションボタンで回答品質を記録</li>
+                </ol>
+
+                <h2>実装した主要機能</h2>
+
+                <h3>1. セマンティック検索</h3>
+                <p>
+                    Kendraのセマンティック検索機能により、キーワード一致だけでなく、意味的に類似した情報も検索できます。例えば「休暇申請の方法」と質問すると、「有給休暇」「年休」「休日取得」といった関連ドキュメントも適切に検索されます。
+                </p>
+
+                <h3>2. コンテキスト管理</h3>
+                <p>
+                    長いドキュメントは適切なサイズにチャンク分割し、各チャンクにメタデータを付与。これにより、関連性の高い部分だけを抽出し、トークン数を最適化しています。
+                </p>
+
+                <h3>3. プロンプトエンジニアリング</h3>
+                <p>
+                    Bedrockに渡すプロンプトを工夫し、以下を実現：
+                </p>
+                <ul>
+                    <li>検索結果のみに基づいた回答（ハルシネーション防止）</li>
+                    <li>情報源の明示（どのドキュメントから回答したか）</li>
+                    <li>わかりやすい日本語での回答生成</li>
+                    <li>情報が見つからない場合の適切な応答</li>
+                </ul>
+
+                <h3>4. フィードバックループ</h3>
+                <p>
+                    ユーザーからのフィードバック（高評価/低評価）を収集し、DynamoDBに保存。定期的に分析することで、回答精度の改善につなげています。
+                </p>
+
+                <h2>開発における課題と解決策</h2>
+
+                <h3>課題1: データソース間のフォーマット差異</h3>
+                <p>
+                    <strong>課題:</strong> Notion、Google Drive、Backlogなど、各サービスのデータ形式が異なり、統一的な処理が困難
+                </p>
+                <p>
+                    <strong>解決策:</strong> 共通のデータモデルを定義し、各データソースに対応したAdapterパターンを実装。これにより、新しいデータソースの追加も容易になりました。
+                </p>
+
+                <h3>課題2: トークン数の制限</h3>
+                <p>
+                    <strong>課題:</strong> Bedrockに渡せるトークン数に制限があり、長文のドキュメントを処理できない
+                </p>
+                <p>
+                    <strong>解決策:</strong> ドキュメントを適切なサイズにチャンク分割し、関連度の高いチャンクのみを選択してコンテキストに含める戦略を採用。また、重要度に基づいた要約機能も実装しました。
+                </p>
+
+                <h3>課題3: Kendraのコスト</h3>
+                <p>
+                    <strong>課題:</strong> Kendraは高機能だがコストも高い
+                </p>
+                <p>
+                    <strong>解決策:</strong> 頻繁に更新されないドキュメントはOpenSearchに格納し、Kendraは重要度の高いドキュメントのみに使用する ハイブリッド構成を採用。コストを60%削減しつつ、検索品質を維持しました。
+                </p>
+
+                <h3>課題4: リアルタイム性</h3>
+                <p>
+                    <strong>課題:</strong> Slackでの質問から回答までの時間を短縮したい
+                </p>
+                <p>
+                    <strong>解決策:</strong> よくある質問はDynamoDBにキャッシュし、検索とLLM呼び出しをスキップ。また、Lambda関数のプロビジョンド同時実行数を設定し、コールドスタートを回避しました。
+                </p>
+
+                <h2>プロジェクトの成果</h2>
+                <ul>
+                    <li><strong>情報検索時間を平均70%削減:</strong> 従来15分かかっていた情報検索が平均5分に短縮</li>
+                    <li><strong>月間質問数3,000件以上:</strong> 社内で活発に利用される重要ツールに成長</li>
+                    <li><strong>回答精度85%:</strong> ユーザーフィードバックによる満足度</li>
+                    <li><strong>新入社員のオンボーディング時間30%短縮:</strong> 社内情報へのアクセスが容易に</li>
+                    <li><strong>問い合わせ件数20%削減:</strong> 人事・総務への問い合わせが減少</li>
+                </ul>
+
+                <h2>今後の改善予定</h2>
+                <ul>
+                    <li><strong>マルチモーダル対応:</strong> 画像や図表からの情報抽出</li>
+                    <li><strong>対話履歴の活用:</strong> 前の質問を考慮した回答生成</li>
+                    <li><strong>パーソナライゼーション:</strong> ユーザーの役職・部署に応じた回答カスタマイズ</li>
+                    <li><strong>プロアクティブな情報提供:</strong> ユーザーが必要そうな情報を事前に提案</li>
+                    <li><strong>音声入力対応:</strong> Slack Huddleからの音声質問</li>
+                </ul>
+
+                <h2>技術的な学び</h2>
+                <ul>
+                    <li>RAGシステムにおけるチャンク戦略とコンテキスト管理の重要性</li>
+                    <li>プロンプトエンジニアリングによる回答品質の向上手法</li>
+                    <li>LLMのハルシネーション対策とソース明示の必要性</li>
+                    <li>サーバーレスアーキテクチャによるスケーラブルなシステム設計</li>
+                    <li>CloudFormationを活用したIaCのベストプラクティス</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>このプロジェクトに興味をお持ちですか？</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

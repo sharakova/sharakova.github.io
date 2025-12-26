@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>大手漫画プラットフォーム - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span aria-current="page">大手漫画プラットフォーム</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+                    </div>
+                    <h1 class="page-title">大手漫画プラットフォーム</h1>
+                    <p class="page-lead">大規模トラフィック対応のバックエンド構築</p>
+                    <div class="tags page-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">API</span>
+                        <span class="tag">大規模</span>
+                        <span class="tag">パフォーマンス最適化</span>
+                    </div>
+                </div>
+
+                <h2>プロジェクト概要</h2>
+                <p>
+                    国内大手の漫画配信プラットフォームにおいて、バックエンドAPI開発とパフォーマンス最適化を担当しました。数百万人のユーザーを抱えるサービスで、安定性と高速性が求められる環境での開発経験を積みました。
+                </p>
+                <p>
+                    PHP/Laravelを活用したRESTful APIの設計・実装を中心に、データベース設計、キャッシング戦略、CDN連携など、大規模サービスのバックエンド全般に関わりました。
+                </p>
+
+                <h2>担当領域</h2>
+                <ul>
+                    <li><strong>API設計・実装:</strong> RESTful APIの設計とLaravelによる実装</li>
+                    <li><strong>データベース最適化:</strong> クエリチューニング、インデックス設計</li>
+                    <li><strong>パフォーマンス最適化:</strong> キャッシング、ロードバランシング</li>
+                    <li><strong>セキュリティ対策:</strong> 認証・認可、不正アクセス対策</li>
+                    <li><strong>コードレビュー:</strong> 品質管理とベストプラクティスの共有</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+
+                <h3>バックエンド</h3>
+                <ul>
+                    <li><strong>PHP 8.x / Laravel:</strong> メインの開発フレームワーク</li>
+                    <li><strong>MySQL 8.0:</strong> メインデータベース</li>
+                    <li><strong>Redis:</strong> セッション管理、キャッシング、レートリミット</li>
+                    <li><strong>Elasticsearch:</strong> 全文検索、レコメンドエンジン</li>
+                    <li><strong>Laravel Horizon:</strong> ジョブキュー管理</li>
+                </ul>
+
+                <h3>インフラ</h3>
+                <ul>
+                    <li><strong>AWS EC2:</strong> アプリケーションサーバー（Auto Scaling）</li>
+                    <li><strong>AWS RDS (MySQL):</strong> マスター/スレーブ構成</li>
+                    <li><strong>AWS ElastiCache (Redis):</strong> クラスター構成</li>
+                    <li><strong>AWS CloudFront:</strong> CDN配信</li>
+                    <li><strong>AWS ALB:</strong> ロードバランシング</li>
+                    <li><strong>AWS S3:</strong> 画像・動画ストレージ</li>
+                </ul>
+
+                <h3>開発・運用</h3>
+                <ul>
+                    <li><strong>Docker:</strong> 開発環境の統一</li>
+                    <li><strong>GitHub Actions:</strong> CI/CDパイプライン</li>
+                    <li><strong>PHPUnit:</strong> ユニットテスト</li>
+                    <li><strong>New Relic:</strong> APM（Application Performance Monitoring）</li>
+                    <li><strong>Datadog:</strong> ログ収集とアラート</li>
+                </ul>
+
+                <h2>実装した主要機能</h2>
+
+                <h3>1. コンテンツ配信API</h3>
+                <p>
+                    漫画作品のメタデータ、エピソード情報、閲覧履歴などを提供するAPIを実装。数百万のリクエストを処理するため、以下の最適化を実施：
+                </p>
+                <ul>
+                    <li>Redisによる多層キャッシング戦略</li>
+                    <li>データベースクエリの最適化（N+1問題の解消）</li>
+                    <li>Eloquent ORMの適切な使用とクエリビルダーの活用</li>
+                    <li>画像URLの事前署名とCDN配信</li>
+                </ul>
+
+                <h3>2. ユーザー認証・認可システム</h3>
+                <p>
+                    Laravel Sanctumを活用したトークンベース認証を実装。セキュリティと利便性を両立させるため、以下を実現：
+                </p>
+                <ul>
+                    <li>JWT（JSON Web Token）による状態を持たない認証</li>
+                    <li>トークンの自動リフレッシュ機能</li>
+                    <li>多段階認証（2FA）のオプション対応</li>
+                    <li>デバイスごとのセッション管理</li>
+                </ul>
+
+                <h3>3. 課金・決済システム連携</h3>
+                <p>
+                    複数の決済プロバイダー（クレジットカード、キャリア決済、電子マネー）との連携APIを実装。トランザクションの整合性を確保するため：
+                </p>
+                <ul>
+                    <li>データベーストランザクションの適切な管理</li>
+                    <li>べき等性の担保（重複購入防止）</li>
+                    <li>決済失敗時のリトライ処理</li>
+                    <li>Webhookによる非同期処理</li>
+                </ul>
+
+                <h3>4. 検索・レコメンド機能</h3>
+                <p>
+                    Elasticsearchを活用した高速な全文検索と、ユーザーの閲覧履歴に基づくレコメンドエンジンを実装：
+                </p>
+                <ul>
+                    <li>形態素解析による日本語検索の最適化</li>
+                    <li>ファセット検索（ジャンル、著者、出版社などでの絞り込み）</li>
+                    <li>協調フィルタリングによるレコメンド</li>
+                    <li>人気作品のリアルタイムランキング</li>
+                </ul>
+
+                <h2>パフォーマンス最適化</h2>
+
+                <h3>データベース最適化</h3>
+                <ul>
+                    <li><strong>クエリチューニング:</strong> EXPLAIN ANALYZEを活用した遅いクエリの特定と最適化</li>
+                    <li><strong>インデックス設計:</strong> 複合インデックスの適切な設計により、クエリ実行時間を90%削減</li>
+                    <li><strong>リードレプリカ活用:</strong> 参照クエリをスレーブに分散し、マスターの負荷を軽減</li>
+                    <li><strong>コネクションプーリング:</strong> 適切な設定でデータベース接続のオーバーヘッドを削減</li>
+                </ul>
+
+                <h3>キャッシング戦略</h3>
+                <ul>
+                    <li><strong>L1キャッシュ（APCu）:</strong> アプリケーション内キャッシュで超高速アクセス</li>
+                    <li><strong>L2キャッシュ（Redis）:</strong> 複数サーバー間で共有するキャッシュ</li>
+                    <li><strong>CDNキャッシュ:</strong> CloudFrontで静的コンテンツを配信</li>
+                    <li><strong>Cache Aside Pattern:</strong> データの整合性を保ちつつ高速化</li>
+                </ul>
+
+                <h3>API設計のベストプラクティス</h3>
+                <ul>
+                    <li><strong>ページネーション:</strong> カーソルベースのページングで大量データを効率的に取得</li>
+                    <li><strong>部分レスポンス:</strong> フィールド指定により必要なデータのみ返却</li>
+                    <li><strong>ETags / Conditional Requests:</strong> 変更がない場合は304 Not Modifiedで帯域削減</li>
+                    <li><strong>Rate Limiting:</strong> Redis Slide Windowアルゴリズムで公平なレート制限</li>
+                </ul>
+
+                <h2>開発における課題と解決策</h2>
+
+                <h3>課題1: アクセス集中時のパフォーマンス低下</h3>
+                <p>
+                    <strong>課題:</strong> 人気作品の新刊配信時にアクセスが集中し、レスポンス時間が大幅に低下
+                </p>
+                <p>
+                    <strong>解決策:</strong> Auto Scalingの設定を見直し、予測的スケーリングを導入。また、新刊配信前に該当データを事前にキャッシュウォーミングすることで、初回アクセスでもキャッシュヒット率を向上させました。結果、ピーク時でも平均レスポンスタイム200ms以下を維持できるようになりました。
+                </p>
+
+                <h3>課題2: データベースのホットスポット</h3>
+                <p>
+                    <strong>課題:</strong> 特定のテーブル（閲覧履歴、いいね数）への書き込みが集中し、ロック競合が発生
+                </p>
+                <p>
+                    <strong>解決策:</strong> 書き込み処理をキューに入れて非同期化し、バッチ処理で集約。また、カウンター系のデータはRedisで管理し、定期的にデータベースに同期する方式に変更。これにより、データベースへの書き込み負荷を70%削減しました。
+                </p>
+
+                <h3>課題3: デプロイ時のダウンタイム</h3>
+                <p>
+                    <strong>課題:</strong> デプロイ時に一時的にサービスが利用できなくなる
+                </p>
+                <p>
+                    <strong>解決策:</strong> ブルーグリーンデプロイメントを導入し、無停止デプロイを実現。また、データベースマイグレーションは後方互換性を保ちながら段階的に実施する戦略を採用しました。
+                </p>
+
+                <h2>セキュリティ対策</h2>
+
+                <h3>実装したセキュリティ対策</h3>
+                <ul>
+                    <li><strong>SQLインジェクション対策:</strong> Eloquent ORMとプリペアドステートメントの活用</li>
+                    <li><strong>XSS対策:</strong> 入力データのエスケープ処理とCSPヘッダーの設定</li>
+                    <li><strong>CSRF対策:</strong> Laravel標準のCSRFトークン検証</li>
+                    <li><strong>レートリミット:</strong> IP単位、ユーザー単位での制限</li>
+                    <li><strong>不正アクセス検知:</strong> 異常なアクセスパターンの自動検出とブロック</li>
+                    <li><strong>データ暗号化:</strong> 機密データの暗号化保存</li>
+                </ul>
+
+                <h2>コード品質の向上</h2>
+
+                <h3>テスト戦略</h3>
+                <ul>
+                    <li><strong>ユニットテスト:</strong> PHPUnitによる単体テスト（カバレッジ80%以上）</li>
+                    <li><strong>統合テスト:</strong> API全体の動作確認</li>
+                    <li><strong>負荷テスト:</strong> ApacheBenchやGatlingによる性能検証</li>
+                    <li><strong>CI/CD:</strong> GitHub Actionsで自動テストとデプロイ</li>
+                </ul>
+
+                <h3>コードレビュー文化</h3>
+                <ul>
+                    <li>全てのコード変更はプルリクエストとレビューを経て本番反映</li>
+                    <li>Laravel Best Practicesに準拠したコーディング規約</li>
+                    <li>PHPStanによる静的解析の導入</li>
+                    <li>定期的なリファクタリングと技術的負債の解消</li>
+                </ul>
+
+                <h2>プロジェクトの成果</h2>
+                <ul>
+                    <li><strong>API平均レスポンスタイム:</strong> 150ms（最適化前は800ms）</li>
+                    <li><strong>同時接続数:</strong> 100,000以上を安定処理</li>
+                    <li><strong>稼働率:</strong> 99.99%を達成</li>
+                    <li><strong>開発速度向上:</strong> CI/CD導入により、デプロイ頻度が週1回から1日数回に</li>
+                    <li><strong>バグ減少:</strong> テスト導入により、本番障害が月5件から月1件以下に</li>
+                </ul>
+
+                <h2>学んだこと</h2>
+                <ul>
+                    <li>大規模トラフィックを処理するためのアーキテクチャ設計</li>
+                    <li>パフォーマンス最適化の手法（キャッシング、クエリチューニングなど）</li>
+                    <li>スケーラブルなAPI設計のベストプラクティス</li>
+                    <li>チーム開発におけるコード品質管理の重要性</li>
+                    <li>継続的インテグレーション・デリバリーの実践</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>このプロジェクトに興味をお持ちですか？</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

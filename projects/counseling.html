@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>オンラインカウンセリングプラットフォーム - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span aria-current="page">オンラインカウンセリングプラットフォーム</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-heart"></use></svg>
+                    </div>
+                    <h1 class="page-title">オンラインカウンセリングプラットフォーム</h1>
+                    <p class="page-lead">日本初のリアルタイムカウンセリングサービス</p>
+                    <div class="tags page-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">WebRTC</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Cloudinary</span>
+                    </div>
+                </div>
+
+                <h2>プロジェクト概要</h2>
+                <p>
+                    メンタルヘルスケアのアクセシビリティを向上させるため、予約不要・アプリ不要で、公認心理師や臨床心理士とすぐに相談できるリアルタイムオンラインカウンセリングプラットフォームを企画・開発しました。
+                </p>
+                <p>
+                    従来のカウンセリングサービスでは、事前予約が必要で、相談したいタイミングですぐに話せないという課題がありました。本サービスは「相談したい時にすぐに相談できる」をコンセプトに、1分単位の課金システムを採用し、気軽にメンタルヘルスケアを受けられる環境を実現しました。
+                </p>
+
+                <h2>主な特徴</h2>
+                <h3>予約不要のリアルタイム接続</h3>
+                <ul>
+                    <li>利用者がサイトにアクセスすると、待機中のカウンセラー一覧をリアルタイムで表示</li>
+                    <li>クリック1つで即座にビデオ通話を開始</li>
+                    <li>WebRTCを活用した低遅延・高品質な通話体験</li>
+                </ul>
+
+                <h3>1分単位の柔軟な課金システム</h3>
+                <ul>
+                    <li>従来の30分・60分単位ではなく、1分単位で課金</li>
+                    <li>リアルタイムで通話時間と料金を表示</li>
+                    <li>Stripeを統合した安全なクレジットカード決済</li>
+                    <li>通話終了後に自動で請求処理</li>
+                </ul>
+
+                <h3>アプリ不要のWeb完結型</h3>
+                <ul>
+                    <li>ブラウザだけで完結し、アプリインストール不要</li>
+                    <li>スマートフォン、タブレット、PCのすべてで利用可能</li>
+                    <li>レスポンシブデザインで最適な体験を提供</li>
+                </ul>
+
+                <h3>高品質なカウンセリング体制</h3>
+                <ul>
+                    <li>公認心理師・臨床心理士の資格保有者のみを採用</li>
+                    <li>有識者によるスーパービジョン体制</li>
+                    <li>カウンセラー評価システムで品質を担保</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+                <h3>フロントエンド</h3>
+                <ul>
+                    <li><strong>Next.js (React):</strong> サーバーサイドレンダリングとSPA機能を活用したモダンなUI実装</li>
+                    <li><strong>TypeScript:</strong> 型安全性を確保し、開発効率と品質を向上</li>
+                    <li><strong>WebRTC:</strong> ピアツーピアのビデオ通話機能を実装</li>
+                    <li><strong>Socket.io:</strong> リアルタイム通信でカウンセラーのステータス更新を実現</li>
+                </ul>
+
+                <h3>バックエンド</h3>
+                <ul>
+                    <li><strong>PHP / Laravel:</strong> RESTful APIの設計・実装</li>
+                    <li><strong>Laravel Echo:</strong> リアルタイムイベントブロードキャスティング</li>
+                    <li><strong>Redis:</strong> セッション管理とリアルタイムデータのキャッシング</li>
+                    <li><strong>MySQL:</strong> ユーザー情報、カウンセラー情報、セッション履歴の管理</li>
+                </ul>
+
+                <h3>インフラ・その他</h3>
+                <ul>
+                    <li><strong>AWS EC2:</strong> アプリケーションサーバーのホスティング</li>
+                    <li><strong>AWS RDS (MySQL):</strong> データベース管理</li>
+                    <li><strong>Cloudinary:</strong> プロフィール画像などのメディア配信</li>
+                    <li><strong>Stripe:</strong> 決済処理の統合</li>
+                    <li><strong>CloudWatch:</strong> ログ監視とアラート設定</li>
+                </ul>
+
+                <h2>実装した主要機能</h2>
+
+                <h3>1. カウンセラーマッチングシステム</h3>
+                <p>
+                    待機中のカウンセラーをリアルタイムで表示し、専門分野や評価、料金などをもとに利用者が選択できるシステムを実装。Socket.ioを活用し、カウンセラーのステータス変更を即座に反映させました。
+                </p>
+
+                <h3>2. WebRTCビデオ通話機能</h3>
+                <p>
+                    WebRTCを活用した1対1のビデオ通話機能を実装。シグナリングサーバーをLaravelで構築し、安定した通話接続を実現しました。通話品質の監視機能も実装し、問題発生時に自動で対応できる体制を構築しました。
+                </p>
+
+                <h3>3. リアルタイム課金システム</h3>
+                <p>
+                    通話開始から1分ごとに料金を計算し、画面上にリアルタイムで表示。通話終了時に自動でStripe APIを呼び出して決済処理を実行。トランザクションの安全性を確保するため、データベースレベルでの整合性チェックも実装しました。
+                </p>
+
+                <h3>4. セキュリティ対策</h3>
+                <ul>
+                    <li>通信は全てHTTPS/WSSで暗号化</li>
+                    <li>個人情報は暗号化してデータベースに保存</li>
+                    <li>CSRF、XSS対策の実装</li>
+                    <li>カウンセリング履歴は法令に準拠した期間で適切に管理</li>
+                </ul>
+
+                <h2>開発における課題と解決策</h2>
+
+                <h3>課題1: WebRTC接続の安定性</h3>
+                <p>
+                    <strong>課題:</strong> NAT越えやファイアウォールにより、一部のユーザーで通話が確立できない問題が発生
+                </p>
+                <p>
+                    <strong>解決策:</strong> TURNサーバーを構築し、ピアツーピア接続が失敗した場合にリレーサーバー経由で通信できる仕組みを実装。接続成功率を95%から99.8%に向上させました。
+                </p>
+
+                <h3>課題2: リアルタイム課金の精度</h3>
+                <p>
+                    <strong>課題:</strong> ネットワーク遅延により、実際の通話時間と課金時間にズレが発生
+                </p>
+                <p>
+                    <strong>解決策:</strong> クライアント側とサーバー側の両方で通話時間を計測し、タイムスタンプを比較して最も正確な時間を採用。通話終了時にサーバー側で最終的な時間を確定する仕組みを実装しました。
+                </p>
+
+                <h3>課題3: ピーク時のパフォーマンス</h3>
+                <p>
+                    <strong>課題:</strong> 夜間のアクセス集中時にレスポンスタイムが低下
+                </p>
+                <p>
+                    <strong>解決策:</strong> Redisによるキャッシング戦略の最適化、データベースクエリのN+1問題解消、CDNの導入により、ピーク時でも安定したパフォーマンスを実現しました。
+                </p>
+
+                <h2>プロジェクトの成果</h2>
+                <ul>
+                    <li>サービス開始から6ヶ月で月間セッション数1,000件突破</li>
+                    <li>カウンセラー満足度93%、利用者満足度91%を達成</li>
+                    <li>有識者から「メンタルヘルスケアのアクセシビリティ向上に貢献」と高評価</li>
+                    <li>メディア掲載複数件獲得</li>
+                    <li>企業向けサービスへの展開も実現</li>
+                </ul>
+
+                <h2>今後の展開</h2>
+                <p>
+                    現在は個人向けサービスを中心に展開していますが、企業の従業員向けサービス「ココロの窓口 for Biz」も開始しました。中小企業向けに、ストレスチェックから従業員カウンセリング、健康経営認定サポートまでワンストップで提供しています。
+                </p>
+                <p>
+                    今後は、AIを活用したカウンセリング補助機能の開発や、グループカウンセリング機能の追加なども検討しています。
+                </p>
+
+                <div class="cta-box">
+                    <p>このプロジェクトに興味をお持ちですか？</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

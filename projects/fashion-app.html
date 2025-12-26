@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>ファッションコーディネートアプリ - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span aria-current="page">ファッションコーディネートアプリ</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>
+                    </div>
+                    <h1 class="page-title">ファッションコーディネートアプリ</h1>
+                    <p class="page-lead">300万DL突破 → 事業売却成功</p>
+                    <div class="tags page-tags">
+                        <span class="tag">iOS</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">Rails</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Exit</span>
+                    </div>
+                </div>
+
+                <h2>プロジェクト概要</h2>
+                <p>
+                    女子大生をメインターゲットとしたファッションコーディネートアプリの企画から開発、グロース、そして事業売却まで、すべてのフェーズを担当しました。国内で300万ダウンロードを達成し、主要なファッションメディアとして成長させることに成功しました。
+                </p>
+                <p>
+                    ブランドやファッション雑誌と提携し、独自コンテンツを生成。アジアを中心に海外展開も実施し、最終的に大手企業への事業売却（Exit）を実現しました。
+                </p>
+
+                <h2>担当領域</h2>
+                <p>
+                    本プロジェクトでは、以下の幅広い領域を担当しました：
+                </p>
+                <ul>
+                    <li><strong>事業企画:</strong> サービスコンセプトの立案、市場調査、競合分析</li>
+                    <li><strong>開発マネジメント:</strong> ベトナムオフショア開発チームのブリッジエンジニア</li>
+                    <li><strong>iOS/Androidアプリ開発:</strong> ネイティブアプリの実装</li>
+                    <li><strong>バックエンド開発:</strong> Rails/PHPによるAPI設計・実装</li>
+                    <li><strong>グロース:</strong> マーケティング戦略、ユーザー獲得施策</li>
+                    <li><strong>パートナーシップ:</strong> ブランド・メーカー・雑誌社との提携交渉</li>
+                </ul>
+
+                <h2>主要機能</h2>
+
+                <h3>コーディネート投稿・共有機能</h3>
+                <ul>
+                    <li>ユーザーが自身のファッションコーディネートを写真で投稿</li>
+                    <li>着用アイテムのタグ付け（ブランド、価格帯、購入場所など）</li>
+                    <li>タイムライン形式で他ユーザーのコーディネートを閲覧</li>
+                    <li>いいね・コメント・シェア機能</li>
+                </ul>
+
+                <h3>パーソナライズされたレコメンド</h3>
+                <ul>
+                    <li>ユーザーの好みを学習し、最適なコーディネートを提案</li>
+                    <li>体型・年齢・予算に合わせたフィルタリング</li>
+                    <li>季節やトレンドを考慮したレコメンデーション</li>
+                </ul>
+
+                <h3>ショッピング機能</h3>
+                <ul>
+                    <li>投稿に含まれるアイテムから直接ECサイトへ遷移</li>
+                    <li>ブランド公式サイトとの連携</li>
+                    <li>アフィリエイト収益の仕組みを実装</li>
+                </ul>
+
+                <h3>オリジナルコンテンツ配信</h3>
+                <ul>
+                    <li>ファッション雑誌・ブランドとのタイアップ記事</li>
+                    <li>スタイリストによる着こなし提案</li>
+                    <li>トレンド情報やコーディネート特集</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+
+                <h3>モバイルアプリ</h3>
+                <ul>
+                    <li><strong>iOS:</strong> Swift、Objective-C（当時）</li>
+                    <li><strong>Android:</strong> Kotlin、Java</li>
+                    <li><strong>画像処理:</strong> カスタムフィルター、リサイズ、最適化</li>
+                    <li><strong>プッシュ通知:</strong> Firebase Cloud Messaging</li>
+                </ul>
+
+                <h3>バックエンド（初期）</h3>
+                <ul>
+                    <li><strong>Ruby on Rails:</strong> RESTful API、管理画面</li>
+                    <li><strong>PostgreSQL:</strong> リレーショナルデータ管理</li>
+                    <li><strong>Redis:</strong> キャッシング、セッション管理</li>
+                    <li><strong>Elasticsearch:</strong> 高速な全文検索</li>
+                </ul>
+
+                <h3>バックエンド（スケール後）</h3>
+                <ul>
+                    <li><strong>PHP:</strong> 一部のマイクロサービス化</li>
+                    <li><strong>MySQL:</strong> スケーラビリティ向上のためのマイグレーション</li>
+                    <li><strong>Memcached:</strong> 追加のキャッシング層</li>
+                </ul>
+
+                <h3>インフラ</h3>
+                <ul>
+                    <li><strong>AWS EC2:</strong> アプリケーションサーバー（Auto Scaling）</li>
+                    <li><strong>AWS RDS:</strong> データベース（Multi-AZ）</li>
+                    <li><strong>AWS S3:</strong> 画像ストレージ</li>
+                    <li><strong>CloudFront:</strong> CDNによる画像配信</li>
+                    <li><strong>ELB:</strong> ロードバランシング</li>
+                </ul>
+
+                <h2>開発体制とオフショア活用</h2>
+                <p>
+                    ベトナムの開発チームとの協業において、ブリッジエンジニアとしての役割を担当しました：
+                </p>
+                <ul>
+                    <li>要件定義の英語ドキュメント作成とコミュニケーション</li>
+                    <li>設計レビューとコードレビュー</li>
+                    <li>品質管理とテスト計画の策定</li>
+                    <li>国内チームとの調整、進捗管理</li>
+                    <li>技術的な課題解決とメンタリング</li>
+                </ul>
+                <p>
+                    適切なコミュニケーション設計により、オフショア開発でありながら高品質なプロダクトを短期間で開発することができました。
+                </p>
+
+                <h2>グロース戦略</h2>
+
+                <h3>初期ユーザー獲得</h3>
+                <ul>
+                    <li>大学キャンパスでのプロモーション活動</li>
+                    <li>インフルエンサーマーケティング（ファッション系YouTuber、ブロガー）</li>
+                    <li>SNS広告の最適化（Instagram、Twitter）</li>
+                </ul>
+
+                <h3>ユーザー定着施策</h3>
+                <ul>
+                    <li>デイリーログインボーナス、チャレンジ企画</li>
+                    <li>プッシュ通知の最適化（A/Bテストを繰り返し実施）</li>
+                    <li>ユーザー投稿へのリアクションでエンゲージメント向上</li>
+                    <li>人気ユーザーのフィーチャー機能</li>
+                </ul>
+
+                <h3>マネタイズ</h3>
+                <ul>
+                    <li>アフィリエイト収益（ECサイトへの誘導）</li>
+                    <li>ブランド・企業とのタイアップ広告</li>
+                    <li>プレミアム機能の提供（一部課金）</li>
+                </ul>
+
+                <h2>海外展開（アジア圏）</h2>
+                <p>
+                    国内での成功を受け、アジア圏への展開を実施しました：
+                </p>
+                <ul>
+                    <li><strong>ローカライゼーション:</strong> 多言語対応（英語、中国語、韓国語）</li>
+                    <li><strong>現地パートナーとの提携:</strong> 各国のファッションブランドとの連携</li>
+                    <li><strong>文化適応:</strong> 各国のファッショントレンドに合わせたコンテンツ</li>
+                    <li><strong>決済対応:</strong> 現地の決済手段への対応</li>
+                </ul>
+                <p>
+                    特に台湾・香港市場で好評を得て、海外ユーザーも大幅に増加しました。
+                </p>
+
+                <h2>スケーリングの課題と解決策</h2>
+
+                <h3>課題1: 画像配信の最適化</h3>
+                <p>
+                    <strong>課題:</strong> ユーザー数増加に伴い、画像配信のトラフィックが急増し、サーバー負荷が増大
+                </p>
+                <p>
+                    <strong>解決策:</strong> CloudFront CDNを導入し、画像をエッジロケーションから配信。さらに、WebPフォーマットへの変換やレスポンシブ画像の実装により、データ転送量を50%削減しました。
+                </p>
+
+                <h3>課題2: データベースのボトルネック</h3>
+                <p>
+                    <strong>課題:</strong> タイムライン取得やレコメンド機能で複雑なクエリが多く、レスポンス時間が低下
+                </p>
+                <p>
+                    <strong>解決策:</strong> Redisによるキャッシング戦略を強化し、頻繁にアクセスされるデータをメモリ上に保持。また、データベースのインデックス最適化とクエリチューニングを実施し、レスポンスタイムを70%改善しました。
+                </p>
+
+                <h2>プロジェクトの成果</h2>
+                <ul>
+                    <li><strong>300万ダウンロード突破</strong>（国内）</li>
+                    <li><strong>DAU（デイリーアクティブユーザー）:</strong> 20万人超</li>
+                    <li><strong>月間PV:</strong> 3,000万PV超</li>
+                    <li><strong>App Store「ライフスタイル」カテゴリで1位</strong>を複数回獲得</li>
+                    <li><strong>主要ファッション雑誌・メディアでの掲載</strong>多数</li>
+                    <li><strong>事業売却（Exit）成功:</strong> 大手企業への譲渡を実現</li>
+                </ul>
+
+                <h2>事業売却（Exit）までの道のり</h2>
+                <p>
+                    成長フェーズでのKPI管理と、継続的な改善により、投資家・買収候補企業からの注目を集めました。最終的に、ファッション業界の大手企業から買収提案を受け、事業売却を実現しました。
+                </p>
+                <p>
+                    この経験を通じて、プロダクト開発だけでなく、事業成長戦略、M&Aプロセスの実務まで、幅広い経験を積むことができました。
+                </p>
+
+                <h2>学んだこと</h2>
+                <ul>
+                    <li>0→1フェーズでのプロダクト開発と市場適合の重要性</li>
+                    <li>グロースフェーズでのスケーラビリティ設計</li>
+                    <li>オフショア開発のマネジメントとコミュニケーション</li>
+                    <li>ユーザー中心の設計思想とデータドリブンな意思決定</li>
+                    <li>事業としての成功（売上・利益）とプロダクトの成長の両立</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>このプロジェクトに興味をお持ちですか？</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

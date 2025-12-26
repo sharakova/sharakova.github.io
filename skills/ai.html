@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>AI/RAGシステム開発 - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#skills">Skills</a>
+                <span>/</span>
+                <span aria-current="page">AI/RAGシステム開発</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ai"></use></svg>
+                    </div>
+                    <h1 class="page-title">AI/RAGシステム開発</h1>
+                    <p class="page-lead">AIを活用した業務効率化とナレッジマネジメント</p>
+                </div>
+
+                <h2>概要</h2>
+                <p>
+                    大規模言語モデル（LLM）とRAG（Retrieval-Augmented Generation）技術を活用し、企業の業務効率化を実現するAIシステムの開発を行っています。特に、社内のナレッジを統合して活用するシステムの構築を得意としています。
+                </p>
+                <p>
+                    AWS BedrockやChatGPT APIを使用した実践的なAIアプリケーション開発の経験があり、プロンプトエンジニアリングからインフラ構築まで一貫して対応できます。
+                </p>
+
+                <h2>主要技術スタック</h2>
+
+                <h3>大規模言語モデル（LLM）</h3>
+                <ul>
+                    <li><strong>AWS Bedrock:</strong> Claude 3 Sonnet/Haiku、Titan Embeddingsなど、複数のモデルを用途に応じて使い分け</li>
+                    <li><strong>OpenAI API:</strong> GPT-4、GPT-3.5-turboを使用したアプリケーション開発</li>
+                    <li><strong>Azure OpenAI Service:</strong> エンタープライズ向けのセキュアなLLM活用</li>
+                </ul>
+
+                <h3>検索・ベクトルデータベース</h3>
+                <ul>
+                    <li><strong>Amazon Kendra:</strong> エンタープライズ向けインテリジェント検索サービス</li>
+                    <li><strong>Amazon OpenSearch:</strong> 全文検索とベクトル検索の組み合わせ</li>
+                    <li><strong>Pinecone:</strong> ベクトル検索特化型データベース</li>
+                    <li><strong>Weaviate:</strong> オープンソースのベクトルデータベース</li>
+                </ul>
+
+                <h3>開発フレームワーク・ライブラリ</h3>
+                <ul>
+                    <li><strong>LangChain:</strong> LLMアプリケーション開発フレームワーク</li>
+                    <li><strong>LlamaIndex:</strong> データコネクターとインデックス管理</li>
+                    <li><strong>Semantic Kernel:</strong> Microsoftのオーケストレーション フレームワーク</li>
+                    <li><strong>Haystack:</strong> NLPパイプラインフレームワーク</li>
+                </ul>
+
+                <h3>プログラミング言語</h3>
+                <ul>
+                    <li><strong>Python:</strong> メインの開発言語（boto3、requests、FastAPIなど）</li>
+                    <li><strong>TypeScript:</strong> フロントエンド・Node.jsバックエンド</li>
+                </ul>
+
+                <h2>RAG（Retrieval-Augmented Generation）システム</h2>
+
+                <h3>RAGとは</h3>
+                <p>
+                    RAGは、外部の知識ベースから関連情報を検索し、その情報をLLMに与えることで、より正確で文脈に沿った回答を生成する手法です。LLMの「ハルシネーション（事実と異なる情報の生成）」を減らし、最新情報や企業固有の情報を活用できる点が特徴です。
+                </p>
+
+                <h3>RAGシステムのアーキテクチャ</h3>
+
+                <h4>1. データ収集・前処理</h4>
+                <ul>
+                    <li><strong>データソース統合:</strong> Notion、Google Drive、Confluence、Backlogなど複数のデータソースからAPIで情報を収集</li>
+                    <li><strong>テキスト抽出:</strong> PDF、Word、スライドなど様々なフォーマットからテキストを抽出</li>
+                    <li><strong>チャンク分割:</strong> 長文を適切なサイズに分割（Recursive Character Text Splitter等を使用）</li>
+                    <li><strong>メタデータ付与:</strong> 作成者、更新日時、カテゴリなどのメタデータを追加</li>
+                </ul>
+
+                <h4>2. ベクトル化・インデックス作成</h4>
+                <ul>
+                    <li><strong>Embedding生成:</strong> テキストをベクトル表現に変換（Titan Embeddings、OpenAI Embeddings等）</li>
+                    <li><strong>インデックス登録:</strong> ベクトルデータベースやKendraにインデックスを作成</li>
+                    <li><strong>メタデータインデックス:</strong> 高速なフィルタリングのためのメタデータインデックス</li>
+                </ul>
+
+                <h4>3. 検索（Retrieval）</h4>
+                <ul>
+                    <li><strong>セマンティック検索:</strong> 質問文をベクトル化し、類似度の高いドキュメントを検索</li>
+                    <li><strong>ハイブリッド検索:</strong> セマンティック検索とキーワード検索を組み合わせ</li>
+                    <li><strong>リランキング:</strong> 検索結果を関連度でソートし直し、上位N件を選択</li>
+                    <li><strong>コンテキスト圧縮:</strong> トークン数制限に合わせて情報を圧縮</li>
+                </ul>
+
+                <h4>4. 回答生成（Generation）</h4>
+                <ul>
+                    <li><strong>プロンプト構築:</strong> 検索結果をコンテキストとしてプロンプトに挿入</li>
+                    <li><strong>LLM呼び出し:</strong> AWS BedrockやOpenAI APIで回答を生成</li>
+                    <li><strong>ソース明示:</strong> 回答に情報源のURLや引用を付加</li>
+                    <li><strong>後処理:</strong> フォーマット整形、リンク生成など</li>
+                </ul>
+
+                <h3>実装したRAGの最適化手法</h3>
+
+                <h4>チャンク戦略の最適化</h4>
+                <ul>
+                    <li><strong>適切なチャンクサイズ:</strong> 512〜1024トークン程度に調整（ドメインに応じて変動）</li>
+                    <li><strong>オーバーラップ:</strong> チャンク間で20%程度のオーバーラップを設定し、文脈の断絶を防ぐ</li>
+                    <li><strong>セマンティック分割:</strong> 段落や見出しなど、意味のまとまりでチャンクを分割</li>
+                </ul>
+
+                <h4>プロンプトエンジニアリング</h4>
+                <ul>
+                    <li><strong>Few-shot Learning:</strong> 例示を含めて回答品質を向上</li>
+                    <li><strong>Chain-of-Thought:</strong> 段階的な思考プロセスを促すプロンプト</li>
+                    <li><strong>制約の明示:</strong> 「検索結果のみに基づいて回答」などの制約を明記</li>
+                    <li><strong>出力フォーマット指定:</strong> Markdown、JSON等の形式を指定</li>
+                </ul>
+
+                <h4>ハルシネーション対策</h4>
+                <ul>
+                    <li><strong>ソース明示の強制:</strong> 必ず情報源を明記するよう指示</li>
+                    <li><strong>不明時の対応:</strong> 情報がない場合は「わかりません」と回答するよう指示</li>
+                    <li><strong>信頼スコア:</strong> 回答の確実性をスコア化</li>
+                    <li><strong>ファクトチェック:</strong> 重要な情報は複数ソースで検証</li>
+                </ul>
+
+                <h2>開発実績</h2>
+
+                <h3>社内RAG質問回答システム</h3>
+                <p>
+                    <a href="../projects/corporate-rag.html">プロジェクト詳細を見る →</a>
+                </p>
+                <ul>
+                    <li>Notion、Google Drive、Backlog等のマルチソース統合</li>
+                    <li>Slackからの自然言語質問に対する高精度な回答</li>
+                    <li>月間3,000件以上の質問処理</li>
+                    <li>情報検索時間を70%削減</li>
+                </ul>
+
+                <h3>カスタマーサポート自動化</h3>
+                <ul>
+                    <li>FAQとマニュアルを基にした自動回答システム</li>
+                    <li>多言語対応（日本語、英語、中国語）</li>
+                    <li>問い合わせ対応時間を50%削減</li>
+                    <li>顧客満足度92%を達成</li>
+                </ul>
+
+                <h3>社内ドキュメント自動生成</h3>
+                <ul>
+                    <li>既存ドキュメントから新規ドキュメントのドラフトを生成</li>
+                    <li>議事録の自動要約と TODO抽出</li>
+                    <li>仕様書の自動レビューと改善提案</li>
+                </ul>
+
+                <h2>AI開発における考慮事項</h2>
+
+                <h3>コスト最適化</h3>
+                <ul>
+                    <li><strong>モデル選択:</strong> 用途に応じて適切なモデルを選択（GPT-4は高品質だがコスト高、GPT-3.5-turboは低コスト）</li>
+                    <li><strong>プロンプト最適化:</strong> 不要なトークンを削減し、簡潔なプロンプトを設計</li>
+                    <li><strong>キャッシング:</strong> 同じ質問への回答をキャッシュし、API呼び出しを削減</li>
+                    <li><strong>バッチ処理:</strong> 複数リクエストをまとめて処理</li>
+                </ul>
+
+                <h3>セキュリティとプライバシー</h3>
+                <ul>
+                    <li><strong>データ匿名化:</strong> 個人情報を除去してからLLMに渡す</li>
+                    <li><strong>アクセス制御:</strong> ユーザーの権限に応じた情報のみを検索対象に</li>
+                    <li><strong>ログ管理:</strong> 質問内容と回答のログを適切に管理</li>
+                    <li><strong>データ保持ポリシー:</strong> LLMプロバイダーのデータ保持ポリシーを確認</li>
+                </ul>
+
+                <h3>評価とモニタリング</h3>
+                <ul>
+                    <li><strong>回答品質の定量評価:</strong> BLEU、ROUGE等のメトリクスで評価</li>
+                    <li><strong>ユーザーフィードバック:</strong> 高評価/低評価での満足度収集</li>
+                    <li><strong>A/Bテスト:</strong> プロンプトやパラメータの最適化</li>
+                    <li><strong>エラー監視:</strong> API呼び出し失敗やタイムアウトの監視</li>
+                </ul>
+
+                <h2>今後の展開</h2>
+
+                <h3>マルチモーダルAI</h3>
+                <p>
+                    画像、音声、動画など、テキスト以外のデータも扱えるマルチモーダルAIシステムの開発を進めています。
+                </p>
+
+                <h3>エージェント開発</h3>
+                <p>
+                    LangChainのAgentやFunction Callingを活用し、複雑なタスクを自律的に実行できるAIエージェントの開発に取り組んでいます。
+                </p>
+
+                <h3>ファインチューニング</h3>
+                <p>
+                    企業固有のデータでLLMをファインチューニングし、より専門的で正確な回答を生成するシステムの研究を進めています。
+                </p>
+
+                <h2>提供できる支援</h2>
+                <ul>
+                    <li>RAGシステムの設計・開発</li>
+                    <li>既存システムへのAI機能追加</li>
+                    <li>プロンプトエンジニアリングコンサルティング</li>
+                    <li>AI活用の技術顧問・アドバイザリー</li>
+                    <li>社内向けAI勉強会の実施</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>AI/RAGシステム開発に関するご相談はお気軽にどうぞ</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

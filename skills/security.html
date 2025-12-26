@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>セキュリティ・IT統制 - sharakova Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#skills">Skills</a>
+                <span>/</span>
+                <span aria-current="page">セキュリティ・IT統制</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <div class="page-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-lock"></use></svg>
+                    </div>
+                    <h1 class="page-title">セキュリティ・IT統制</h1>
+                    <p class="page-lead">企業のセキュリティ体制構築とコンプライアンス対応</p>
+                </div>
+
+                <h2>概要</h2>
+                <p>
+                    コーポレートエンジニアとして、IT統制・セキュリティ領域でのキャリアをスタート。企業のIT全般統制、業務処理統制、PCI DSS整備、ISMS取得支援など、コンプライアンス体制の構築から運用まで幅広く経験してきました。
+                </p>
+                <p>
+                    セキュリティは「技術」だけでなく「プロセス」と「人」の総合的なアプローチが必要です。組織全体のセキュリティ意識向上と、実効性のある統制環境の整備を得意としています。
+                </p>
+
+                <h2>主要スキル</h2>
+
+                <h3>IT全般統制・業務処理統制</h3>
+                <p>
+                    企業のITシステムが適切に運用され、財務報告の信頼性が確保されるよう、IT統制の整備と運用評価を実施してきました。
+                </p>
+
+                <h4>実施内容</h4>
+                <ul>
+                    <li><strong>IT全般統制（ITGC）の整備:</strong> システム開発・変更管理、アクセス管理、システム運用管理、データバックアップなどの統制を設計</li>
+                    <li><strong>業務処理統制の評価:</strong> 各業務プロセスにおける自動化統制・手作業統制の有効性評価</li>
+                    <li><strong>SOX法対応:</strong> J-SOX（内部統制報告制度）に準拠した統制環境の構築</li>
+                    <li><strong>リスクアセスメント:</strong> ITリスクの識別と評価、対応策の策定</li>
+                    <li><strong>証跡管理:</strong> 監査証跡の整備とログ管理体制の構築</li>
+                </ul>
+
+                <h4>導入した統制の例</h4>
+                <ul>
+                    <li>本番環境への変更時の承認プロセスとレビュー体制</li>
+                    <li>特権アカウントの管理とアクセスログの監視</li>
+                    <li>システム障害発生時のエスカレーション手順</li>
+                    <li>データバックアップの自動化と定期的なリストアテスト</li>
+                    <li>職務分離の原則に基づいたアクセス権限設計</li>
+                </ul>
+
+                <h3>PCI DSS（Payment Card Industry Data Security Standard）</h3>
+                <p>
+                    クレジットカード情報を扱う事業者に求められるPCI DSSの準拠体制を整備。認証取得から継続的な運用まで担当しました。
+                </p>
+
+                <h4>実施した対策</h4>
+                <ul>
+                    <li><strong>ネットワークセグメンテーション:</strong> カード情報を扱うシステムの物理的・論理的な隔離</li>
+                    <li><strong>データ暗号化:</strong> カード情報の保存時・通信時の暗号化実装</li>
+                    <li><strong>アクセス制御:</strong> 最小権限の原則に基づいたアクセス管理</li>
+                    <li><strong>ログ監視:</strong> すべてのアクセスログの記録と定期的なレビュー</li>
+                    <li><strong>脆弱性管理:</strong> 定期的な脆弱性診断とパッチ適用プロセス</li>
+                    <li><strong>物理セキュリティ:</strong> サーバールームへのアクセス制限とモニタリング</li>
+                    <li><strong>従業員教育:</strong> セキュリティ意識向上のための定期トレーニング</li>
+                </ul>
+
+                <h4>PCI DSS 12要件への対応例</h4>
+                <ol>
+                    <li>ファイアウォールの設定と管理によるネットワーク保護</li>
+                    <li>デフォルトパスワードの変更と強固なパスワードポリシー</li>
+                    <li>保存カード会員データの保護（暗号化・トークナイゼーション）</li>
+                    <li>通信時のカード情報暗号化（TLS 1.2以上）</li>
+                    <li>マルウェア対策ソフトの導入と定期更新</li>
+                    <li>セキュアなシステム開発プロセス</li>
+                    <li>業務上の必要性に基づくアクセス制限</li>
+                    <li>一意のIDとパスワードによる認証</li>
+                    <li>物理的アクセスの制限と監視</li>
+                    <li>ログの記録と定期的なレビュー</li>
+                    <li>脆弱性診断の定期実施</li>
+                    <li>セキュリティポリシーの策定と全社展開</li>
+                </ol>
+
+                <h3>ISMS（情報セキュリティマネジメントシステム）</h3>
+                <p>
+                    ISO/IEC 27001認証の取得に向けた情報セキュリティマネジメントシステムの構築と運用を支援してきました。
+                </p>
+
+                <h4>取り組み内容</h4>
+                <ul>
+                    <li><strong>リスクアセスメント:</strong> 情報資産の洗い出しとリスク評価</li>
+                    <li><strong>セキュリティポリシー策定:</strong> 情報セキュリティ基本方針と各種規程の作成</li>
+                    <li><strong>管理策の実装:</strong> ISO/IEC 27001附属書Aの114管理策から適用する管理策を選定・実装</li>
+                    <li><strong>内部監査の実施:</strong> 定期的な内部監査によるPDCAサイクルの運用</li>
+                    <li><strong>従業員教育:</strong> 全従業員向けのセキュリティ教育プログラムの実施</li>
+                    <li><strong>インシデント対応:</strong> セキュリティインシデント発生時の対応手順の整備</li>
+                </ul>
+
+                <h4>整備したドキュメント例</h4>
+                <ul>
+                    <li>情報セキュリティ基本方針</li>
+                    <li>情報セキュリティ管理規程</li>
+                    <li>アクセス管理規程</li>
+                    <li>システム開発・変更管理規程</li>
+                    <li>インシデント管理手順書</li>
+                    <li>事業継続計画（BCP）</li>
+                    <li>リスク管理台帳</li>
+                </ul>
+
+                <h3>脆弱性診断</h3>
+                <p>
+                    Webアプリケーション、ネットワーク、サーバーの脆弱性診断を計画・実行し、セキュリティリスクの低減に取り組んできました。
+                </p>
+
+                <h4>実施している診断</h4>
+
+                <h5>内部脆弱性診断</h5>
+                <ul>
+                    <li>社内ネットワークからのポートスキャン</li>
+                    <li>サーバー・ネットワーク機器の設定レビュー</li>
+                    <li>パッチ適用状況の確認</li>
+                    <li>不要なサービス・ポートの検出</li>
+                    <li>アカウント管理状況のチェック</li>
+                </ul>
+
+                <h5>外部脆弱性診断</h5>
+                <ul>
+                    <li>インターネットからのポートスキャン</li>
+                    <li>公開サーバーの脆弱性スキャン</li>
+                    <li>DMZ環境のセキュリティ評価</li>
+                    <li>SSL/TLS設定の検証</li>
+                    <li>DNSセキュリティの確認</li>
+                </ul>
+
+                <h5>Webアプリケーション診断</h5>
+                <ul>
+                    <li>OWASP Top 10に基づく脆弱性検査</li>
+                    <li>SQLインジェクション、XSS、CSRF等の検証</li>
+                    <li>認証・認可機能の安全性評価</li>
+                    <li>セッション管理の妥当性確認</li>
+                    <li>APIセキュリティの検証</li>
+                </ul>
+
+                <h5>ペネトレーションテスト</h5>
+                <ul>
+                    <li>実際の攻撃シナリオに基づいた侵入試験</li>
+                    <li>ソーシャルエンジニアリング対策の評価</li>
+                    <li>権限昇格の可能性検証</li>
+                    <li>ラテラルムーブメントの検証</li>
+                    <li>データ窃取シナリオのテスト</li>
+                </ul>
+
+                <h4>使用ツール</h4>
+                <ul>
+                    <li><strong>Nmap:</strong> ポートスキャン、サービス検出</li>
+                    <li><strong>OWASP ZAP / Burp Suite:</strong> Webアプリケーション診断</li>
+                    <li><strong>Nessus / OpenVAS:</strong> 脆弱性スキャナー</li>
+                    <li><strong>Metasploit:</strong> ペネトレーションテストフレームワーク</li>
+                    <li><strong>Wireshark:</strong> パケット解析</li>
+                </ul>
+
+                <h3>社内開発ルールの策定</h3>
+                <p>
+                    セキュアな開発を実現するため、開発プロセスとコーディング規約を整備してきました。
+                </p>
+
+                <h4>整備した開発ルール</h4>
+                <ul>
+                    <li><strong>セキュアコーディング規約:</strong> 言語別のセキュアコーディングガイドライン</li>
+                    <li><strong>コードレビュー基準:</strong> セキュリティ観点でのレビューチェックリスト</li>
+                    <li><strong>脆弱性対応フロー:</strong> 発見から修正までのプロセス定義</li>
+                    <li><strong>オープンソース管理:</strong> ライセンスと脆弱性管理の手順</li>
+                    <li><strong>デプロイメントプロセス:</strong> 本番環境への安全なデプロイ手順</li>
+                </ul>
+
+                <h2>実績・成果</h2>
+                <ul>
+                    <li>複数企業でのPCI DSS認証取得支援と継続的な運用体制構築</li>
+                    <li>ISO/IEC 27001（ISMS）認証取得のプロジェクトマネジメント</li>
+                    <li>J-SOX対応における全社IT統制の整備と運用評価</li>
+                    <li>定期的な脆弱性診断の実施と、検出された脆弱性の100%対応</li>
+                    <li>セキュリティインシデント0件の実績（2年間）</li>
+                    <li>全社員向けセキュリティ研修の企画・実施（年4回、受講率99%）</li>
+                </ul>
+
+                <h2>保有資格・知識</h2>
+                <ul>
+                    <li>情報処理安全確保支援士（登録セキスペ）相当の知識</li>
+                    <li>ISO/IEC 27001（ISMS）内部監査員資格</li>
+                    <li>PCI DSS準拠に関する実務経験</li>
+                    <li>J-SOX対応実務経験</li>
+                </ul>
+
+                <h2>セキュリティ対応の考え方</h2>
+                <p>
+                    セキュリティは「完璧」を目指すものではなく、リスクを適切に管理し、ビジネスを守ることが目的です。以下の原則を大切にしています：
+                </p>
+                <ul>
+                    <li><strong>リスクベースアプローチ:</strong> すべてのリスクを排除するのではなく、事業への影響を考慮した優先順位付け</li>
+                    <li><strong>多層防御:</strong> 単一の対策に依存せず、複数の防御層を構築</li>
+                    <li><strong>継続的改善:</strong> 一度構築して終わりではなく、PDCAサイクルでの継続的な改善</li>
+                    <li><strong>実効性重視:</strong> 形式的な対策ではなく、実際に機能する実効性のある対策</li>
+                    <li><strong>ユーザビリティとのバランス:</strong> セキュリティと使いやすさの両立</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>セキュリティ・IT統制に関するご相談はお気軽にどうぞ</p>
+                    <a href="../index.html#contact" class="btn">SNSリンクを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

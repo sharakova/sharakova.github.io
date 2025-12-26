@@ -1,1 +1,296 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>sharakova - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <h1>技術で未来を創造する</h1>
+                <p>Security × AI × Full Stack Development</p>
+                <p class="subtitle">企業のIT統制から新規事業開発まで、技術で価値を提供</p>
+                <a href="#contact" class="btn">SNSで連絡する</a>
+                <a href="#projects" class="btn btn-secondary">実績を見る</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">技術と情熱で、価値あるプロダクトを創り続ける</p>
+            <div class="content">
+                <p>
+                    IT統制・セキュリティのスペシャリストとしてキャリアをスタートし、現在はAI/RAGシステムの開発、新規事業の立ち上げまで、幅広い技術領域で活躍しています。
+                </p>
+                <p>
+                    「技術を通じて社会課題を解決すること」を信念とし、特にメンタルヘルス領域での事業創出に力を注いでいます。300万ダウンロードを達成したファッションアプリの事業売却経験もあり、技術面だけでなくビジネス面でのサポートも可能です。
+                </p>
+                <p>
+                    PHP/Laravel、Next.js、Python、AWSを中心としたフルスタック開発が得意で、0→1のプロダクト開発から大規模システムの構築まで、あらゆるフェーズで価値を提供します。
+                </p>
+
+                <h3>主な実績</h3>
+                <ul>
+                    <li>日本初のリアルタイムオンラインカウンセリングプラットフォームの企画・開発</li>
+                    <li>企業向けメンタルヘルスSaaSの構築（50人未満の事業場向け）</li>
+                    <li>ファッションアプリの0→1開発から300万DL達成、事業売却まで</li>
+                    <li>大手漫画プラットフォームのバックエンド構築</li>
+                    <li>社内RAGシステムの開発（AWS Bedrock + Kendra）</li>
+                </ul>
+
+                <h3>得意領域</h3>
+                <ul>
+                    <li><strong>セキュリティ・IT統制：</strong> IT全般統制、PCI DSS、ISMS、脆弱性診断</li>
+                    <li><strong>AI/RAG開発：</strong> AWS Bedrock、ChatGPT、Kendra、OpenSearch</li>
+                    <li><strong>フルスタック開発：</strong> PHP/Laravel、Next.js/React、Python、AWS</li>
+                    <li><strong>事業開発：</strong> 0→1プロダクト開発、事業企画、グロースハック</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Skills</h2>
+            <p class="section-subtitle">多様な技術スタックで、あらゆる課題に対応</p>
+            <div class="grid-4">
+                <a href="skills/security.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-lock"></use></svg>
+                        セキュリティ・IT統制
+                    </h3>
+                    <ul>
+                        <li>IT全般統制・業務処理統制</li>
+                        <li>PCI DSS整備・運用</li>
+                        <li>ISMS取得支援</li>
+                        <li>脆弱性診断</li>
+                    </ul>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+                <a href="skills/ai.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ai"></use></svg>
+                        AI/RAGシステム開発
+                    </h3>
+                    <ul>
+                        <li>AWS Bedrock / ChatGPT</li>
+                        <li>Kendra / OpenSearch</li>
+                        <li>ナレッジベース構築</li>
+                        <li>Slack Bot開発</li>
+                    </ul>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+                <a href="skills/fullstack.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>
+                        フルスタック開発
+                    </h3>
+                    <ul>
+                        <li>PHP / Laravel</li>
+                        <li>Next.js / React</li>
+                        <li>Python</li>
+                        <li>AWS Infrastructure</li>
+                    </ul>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+                <a href="skills/business.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-rocket"></use></svg>
+                        事業開発・グロース
+                    </h3>
+                    <ul>
+                        <li>0→1プロダクト開発</li>
+                        <li>事業企画・戦略立案</li>
+                        <li>グロースハック</li>
+                        <li>海外展開（アジア圏）</li>
+                    </ul>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">革新的なプロダクトで、社会に価値を提供</p>
+            <div class="grid-2">
+                <a href="projects/counseling.html" class="project-card">
+                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-heart"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>オンラインカウンセリングプラットフォーム</h3>
+                        <p><strong>日本初のリアルタイムカウンセリングサービス</strong></p>
+                        <p>予約不要・1分単位課金で、公認心理師とすぐに相談できる革新的なプラットフォーム。Laravel + Next.js + WebRTCで実装。</p>
+                        <div class="tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">WebRTC</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/mental-health-saas.html" class="project-card">
+                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-building"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>企業向けメンタルヘルスSaaS</h3>
+                        <p><strong>中小企業の健康経営を支援</strong></p>
+                        <p>50人未満の事業場向けに、ストレスチェック・カウンセリング・認定サポートをワンストップで提供。</p>
+                        <div class="tags">
+                            <span class="tag">SaaS</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">健康経営</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/fashion-app.html" class="project-card">
+                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>ファッションコーディネートアプリ</h3>
+                        <p><strong>300万DL突破 → 事業売却成功</strong></p>
+                        <p>女子大生向けファッションメディアアプリの事業企画から開発、グロース、売却まで全てを担当。</p>
+                        <div class="tags">
+                            <span class="tag">iOS</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">Rails</span>
+                            <span class="tag">Exit</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/corporate-rag.html" class="project-card">
+                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ai"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>社内RAG質問回答システム</h3>
+                        <p><strong>AIで業務効率を劇的に向上</strong></p>
+                        <p>Notion、Google Drive、Backlog等を統合し、Slackから質問できるAI Bot。AWS Bedrock + Kendraで実装。</p>
+                        <div class="tags">
+                            <span class="tag">AWS Bedrock</span>
+                            <span class="tag">Kendra</span>
+                            <span class="tag">RAG</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/manga-platform.html" class="project-card">
+                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>大手漫画プラットフォーム</h3>
+                        <p><strong>大規模トラフィック対応のバックエンド</strong></p>
+                        <p>人気漫画アプリ・Webサービスのバックエンド開発。PHP/Laravelによる高パフォーマンスAPI設計。</p>
+                        <div class="tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">API</span>
+                            <span class="tag">大規模</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Connect</h2>
+            <p class="section-subtitle">ご連絡はSNSからお願いします</p>
+            <div class="content" style="max-width: 760px;">
+                <div class="footer-links" style="justify-content: center;">
+                    <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                        X
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/site.js" defer></script>
+</body>
+</html>
