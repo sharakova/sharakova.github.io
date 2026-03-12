@@ -25,6 +25,7 @@ export default function Home() {
   const [isRestoring, setIsRestoring] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [readingBook, setReadingBook] = useState<ParsedEpub | null>(null);
+  const [loadProgress, setLoadProgress] = useState("");
   const initRef = useRef(false);
 
   // ──────── 起動時: IndexedDB から復元 ────────
@@ -66,36 +67,54 @@ export default function Home() {
     })();
   }, []);
 
-  // ──────── ファイル選択 → パース → DB保存 ────────
-  const handleFileSelect = useCallback(async (file: File) => {
+  // ──────── ファイル選択 → パース → DB保存（複数ファイル対応） ────────
+  const handleFilesSelect = useCallback(async (files: File[]) => {
     setIsLoading(true);
     setError(null);
-    try {
-      const epub = await parseEpub(file);
-      if (epub.pages.length === 0) {
-        throw new Error("EPUBファイルに画像ページが見つかりませんでした。");
+    setLoadProgress("");
+
+    const errors: string[] = [];
+    const total = files.length;
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      if (total > 1) {
+        setLoadProgress(`${i + 1} / ${total}`);
       }
 
-      const id = crypto.randomUUID();
+      try {
+        const epub = await parseEpub(file);
+        if (epub.pages.length === 0) {
+          errors.push(`${file.name}: 画像ページが見つかりませんでした`);
+          continue;
+        }
 
-      // IndexedDB に保存
-      const record: BookRecord = {
-        id,
-        title: epub.meta.title,
-        author: epub.meta.author,
-        direction: epub.meta.direction,
-        pageCount: epub.meta.pageCount,
-        addedAt: Date.now(),
-        file: new Blob([file], { type: file.type }),
-      };
-      await saveBook(record);
+        const id = crypto.randomUUID();
 
-      setBooks((prev) => [...prev, { id, epub }]);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "EPUBの解析に失敗しました。");
-    } finally {
-      setIsLoading(false);
+        // IndexedDB に保存
+        const record: BookRecord = {
+          id,
+          title: epub.meta.title,
+          author: epub.meta.author,
+          direction: epub.meta.direction,
+          pageCount: epub.meta.pageCount,
+          addedAt: Date.now(),
+          file: new Blob([file], { type: file.type }),
+        };
+        await saveBook(record);
+
+        setBooks((prev) => [...prev, { id, epub }]);
+      } catch (e) {
+        const msg = e instanceof Error ? e.message : "解析に失敗";
+        errors.push(`${file.name}: ${msg}`);
+      }
     }
+
+    if (errors.length > 0) {
+      setError(errors.join("\n"));
+    }
+    setLoadProgress("");
+    setIsLoading(false);
   }, []);
 
   // ──────── 削除 ────────
@@ -144,13 +163,14 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 py-8 space-y-8">
           {/* ファイルアップロード */}
           <FileUploader
-            onFileSelect={handleFileSelect}
+            onFilesSelect={handleFilesSelect}
             isLoading={isLoading}
+            progress={loadProgress}
           />
 
           {/* エラー表示 */}
           {error && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm">
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm whitespace-pre-line">
               {error}
             </div>
           )}
