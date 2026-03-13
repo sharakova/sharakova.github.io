@@ -31,6 +31,9 @@ export default function MangaReader({ epub, onClose }: MangaReaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const verticalContainerRef = useRef<HTMLDivElement>(null);
 
+  // タッチ後の合成clickを無視するためのフラグ
+  const touchHandledRef = useRef(false);
+
   const isRTL = meta.direction === "rtl";
   const totalPages = pages.length;
 
@@ -132,6 +135,10 @@ export default function MangaReader({ epub, onClose }: MangaReaderProps) {
     const { x: dx, y: dy } = touchDeltaRef.current;
     const threshold = 50;
 
+    // タッチ操作を処理済みとしてマーク（合成clickを無視するため）
+    touchHandledRef.current = true;
+    setTimeout(() => { touchHandledRef.current = false; }, 300);
+
     if (mode === "horizontal" && Math.abs(dx) > threshold && Math.abs(dx) > Math.abs(dy)) {
       if (isRTL) {
         dx < 0 ? goNext() : goPrev();
@@ -157,8 +164,10 @@ export default function MangaReader({ epub, onClose }: MangaReaderProps) {
     setSwipeOffset(0);
   };
 
-  // 画面タップ（水平モード・マウス）
+  // 画面タップ（水平モード・マウスのみ）
   const onClickArea = (e: React.MouseEvent) => {
+    // タッチ操作後の合成clickイベントは無視する
+    if (touchHandledRef.current) return;
     if (mode !== "horizontal") return;
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     const relX = (e.clientX - rect.left) / rect.width;

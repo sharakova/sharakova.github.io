@@ -13,7 +13,10 @@ export default function BookCard({ epub, onRead, onRemove }: BookCardProps) {
   const coverUrl = pages[0]?.url;
 
   return (
-    <div className="group relative bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/10">
+    <div
+      className="group relative bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/10 cursor-pointer"
+      onClick={onRead}
+    >
       {/* カバー画像 */}
       <div className="relative aspect-[3/4] bg-black/50 overflow-hidden">
         {coverUrl && (
@@ -21,16 +24,14 @@ export default function BookCard({ epub, onRead, onRemove }: BookCardProps) {
             src={coverUrl}
             alt={meta.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            draggable={false}
           />
         )}
-        {/* オーバーレイ */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-          <button
-            onClick={onRead}
-            className="px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full font-medium text-sm transition-colors"
-          >
+        {/* オーバーレイ（PC: hover時に表示） */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 pointer-events-none">
+          <span className="px-6 py-2 bg-pink-500 text-white rounded-full font-medium text-sm">
             読む
-          </button>
+          </span>
         </div>
         {/* バッジ */}
         <div className="absolute top-2 right-2 flex gap-1.5">
@@ -63,7 +64,7 @@ export default function BookCard({ epub, onRead, onRemove }: BookCardProps) {
           e.stopPropagation();
           onRemove();
         }}
-        className="absolute top-2 left-2 p-1 rounded bg-black/50 text-white/50 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-all"
+        className="absolute top-2 left-2 p-1.5 rounded-lg bg-black/60 text-white/50 hover:text-red-400 hover:bg-black/80 opacity-0 group-hover:opacity-100 active:opacity-100 transition-all"
         title="削除"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
