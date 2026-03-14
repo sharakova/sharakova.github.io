@@ -164,6 +164,80 @@ export async function parseEpub(file: File): Promise<ParsedEpub> {
 }
 
 /**
+ * EPUB から表紙画像だけを抽出する（軽量版）
+ * 全ページをパースせず最初の画像のみ取得
+ */
+export async function extractCover(data: ArrayBuffer): Promise<string | null> {
+  try {
+    const zip = await JSZip.loadAsync(data);
+
+    const containerXml = await zip
+      .file("META-INF/container.xml")
+      ?.async("text");
+    if (!containerXml) return null;
+
+    const opfPathMatch = containerXml.match(/full-path="([^"]+)"/);
+    if (!opfPathMatch) return null;
+    const opfPath = opfPathMatch[1];
+    const opfDir = opfPath.substring(0, opfPath.lastIndexOf("/") + 1);
+
+    const opfXml = await zip.file(opfPath)?.async("text");
+    if (!opfXml) return null;
+
+    const parser = new DOMParser();
+    const opfDoc = parser.parseFromString(opfXml, "application/xml");
+
+    // manifest マップ
+    const manifestItems = opfDoc.querySelectorAll("manifest item");
+    const itemMap = new Map<string, { href: string; mediaType: string }>();
+    manifestItems.forEach((item) => {
+      const id = item.getAttribute("id") || "";
+      const href = item.getAttribute("href") || "";
+      const mediaType = item.getAttribute("media-type") || "";
+      itemMap.set(id, { href, mediaType });
+    });
+
+    // spine の最初のアイテムから画像を取得
+    const firstSpineRef = opfDoc.querySelector("spine itemref");
+    if (firstSpineRef) {
+      const idref = firstSpineRef.getAttribute("idref");
+      const item = idref ? itemMap.get(idref) : null;
+
+      if (item) {
+        if (item.mediaType === "application/xhtml+xml") {
+          const xhtmlPath = opfDir + item.href;
+          const xhtml = await zip.file(xhtmlPath)?.async("text");
+          if (xhtml) {
+            const pageDoc = parser.parseFromString(xhtml, "application/xhtml+xml");
+            const img = pageDoc.querySelector("img");
+            if (img) {
+              const imgSrc = img.getAttribute("src") || "";
+              const imgDir = item.href.substring(0, item.href.lastIndexOf("/") + 1);
+              const imgPath = normalizePath(opfDir + imgDir + imgSrc);
+              const imgFile = zip.file(imgPath);
+              if (imgFile) {
+                const blob = await imgFile.async("blob");
+                return URL.createObjectURL(blob);
+              }
+            }
+          }
+        } else if (item.mediaType.startsWith("image/")) {
+          const imgFile = zip.file(opfDir + item.href);
+          if (imgFile) {
+            const blob = await imgFile.async("blob");
+            return URL.createObjectURL(new Blob([blob], { type: item.mediaType }));
+          }
+        }
+      }
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * cleanup: object URL を解放
  */
 export function releaseEpub(epub: ParsedEpub) {

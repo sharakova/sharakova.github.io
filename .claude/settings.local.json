@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/makoto/src/github/sharakova.github.io/manga-src/src -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.js -o -name *.jsx \\\\\\))",
+      "Bash(find /Users/makoto/src/github/sharakova.github.io -maxdepth 3 \\\\\\(-name *.config.* -o -name .env* -o -name next.config* \\\\\\))",
+      "Bash(npm run:*)"
+    ]
+  }
+}

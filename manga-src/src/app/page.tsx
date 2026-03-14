@@ -12,6 +12,7 @@ import {
 import FileUploader from "@/components/FileUploader";
 import BookCard from "@/components/BookCard";
 import MangaReader from "@/components/MangaReader";
+import GoogleDriveBrowser from "@/components/GoogleDriveBrowser";
 
 /** ParsedEpub に永続化用の ID を紐付ける */
 interface BookEntry {
@@ -65,6 +66,25 @@ export default function Home() {
         setIsRestoring(false);
       }
     })();
+  }, []);
+
+  // ──────── Google Drive からファイルを読み込み（DBに保存しない） ────────
+  const handleDriveFile = useCallback(async (file: File) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const epub = await parseEpub(file);
+      if (epub.pages.length === 0) {
+        setError(`${file.name}: 画像ページが見つかりませんでした`);
+        return;
+      }
+      setReadingBook(epub);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : "解析に失敗";
+      setError(`${file.name}: ${msg}`);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   // ──────── ファイル選択 → パース → DB保存（複数ファイル対応） ────────
@@ -167,6 +187,9 @@ export default function Home() {
             isLoading={isLoading}
             progress={loadProgress}
           />
+
+          {/* Google Drive */}
+          <GoogleDriveBrowser onFileLoaded={handleDriveFile} />
 
           {/* エラー表示 */}
           {error && (
