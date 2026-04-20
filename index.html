@@ -5,7 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#6366f1">
-    <title>sharakova - Portfolio</title>
+    <title>sharakova - Portfolio | Security × AI × Full Stack</title>
+    <meta name="description" content="小林誠 (sharakova) のポートフォリオ。IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。社内ナレッジベースAI SaaS「ものしりAI」を企画・開発・運営中。">
+    <link rel="canonical" href="https://sharakova.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="sharakova - Portfolio | Security × AI × Full Stack">
+    <meta property="og:description" content="IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。社内ナレッジベースAI SaaS「ものしりAI」を企画・開発・運営中。">
+    <meta property="og:url" content="https://sharakova.github.io/">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "小林 誠",
+      "alternateName": "sharakova",
+      "url": "https://sharakova.github.io/",
+      "jobTitle": "Security × AI × Full Stack Engineer",
+      "description": "IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。社内ナレッジベースAI SaaS『ものしりAI』を企画・開発・運営。",
+      "sameAs": [
+        "https://github.com/sharakova",
+        "https://www.linkedin.com/in/makoto-kobayashi-a4927697/",
+        "https://x.com/sharakova",
+        "https://monoshiri.ai"
+      ],
+      "knowsAbout": [
+        "IT General Controls",
+        "PCI DSS",
+        "ISMS",
+        "RAG",
+        "AWS Bedrock",
+        "Next.js",
+        "NestJS",
+        "Multi-tenant SaaS"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ものしりAI",
+        "url": "https://monoshiri.ai"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <script>
         (() => {
@@ -79,11 +118,15 @@
                     「技術を通じて社会課題を解決すること」を信念とし、特にメンタルヘルス領域での事業創出に力を注いでいます。300万ダウンロードを達成したファッションアプリの事業売却経験もあり、技術面だけでなくビジネス面でのサポートも可能です。
                 </p>
                 <p>
+                    2025年からは、社内ナレッジベースAI SaaS「<a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer">ものしりAI</a>（monoshiri.ai）」を企画・開発・運営中。AWS Bedrock + S3 Vectors を用いたマルチテナント型の RAG プラットフォームをソロで構築しています。
+                </p>
+                <p>
                     PHP/Laravel、Next.js、Python、AWSを中心としたフルスタック開発が得意で、0→1のプロダクト開発から大規模システムの構築まで、あらゆるフェーズで価値を提供します。
                 </p>
 
                 <h3>主な実績</h3>
                 <ul>
+                    <li>社内ナレッジベースAI SaaS「<a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer">ものしりAI</a>」の企画・開発・運営（2025〜）</li>
                     <li>日本初のリアルタイムオンラインカウンセリングプラットフォームの企画・開発</li>
                     <li>企業向けメンタルヘルスSaaSの構築（50人未満の事業場向け）</li>
                     <li>ファッションアプリの0→1開発から300万DL達成、事業売却まで</li>
@@ -168,6 +211,24 @@
             <h2 class="section-title">Featured Projects</h2>
             <p class="section-subtitle">革新的なプロダクトで、社会に価値を提供</p>
             <div class="grid-2">
+                <a href="projects/monoshiri.html" class="project-card">
+                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #1D4ED8 0%, #8B5CF6 100%);">
+                        <img src="assets/monoshiri/icon.svg" alt="ものしりAI アイコン" width="64" height="64" loading="lazy" style="width:64px;height:64px;">
+                    </div>
+                    <div class="project-content">
+                        <h3>ものしりAI（monoshiri.ai）</h3>
+                        <p><strong>社内ナレッジベースAI SaaS — 企画・開発・運営</strong></p>
+                        <p>社内ドキュメントをアップロードするだけで、管理画面・LINE・チャットウィジェットから自然言語でAIに聞ける SaaS。AWS Bedrock Cohere Embed v4 + S3 Vectors によるマルチテナント RAG 基盤をソロ構築。</p>
+                        <div class="tags">
+                            <span class="tag">Next.js 15</span>
+                            <span class="tag">NestJS</span>
+                            <span class="tag">AWS Bedrock</span>
+                            <span class="tag">S3 Vectors</span>
+                            <span class="tag">Stripe</span>
+                            <span class="tag">SaaS</span>
+                        </div>
+                    </div>
+                </a>
                 <a href="projects/counseling.html" class="project-card">
                     <div class="project-image" style="--badge-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-heart"></use></svg>

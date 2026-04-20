@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#6366f1">
+    <title>ものしりAI - 社内ナレッジベースAI SaaS - sharakova Portfolio</title>
+    <meta name="description" content="社内ナレッジベースAI SaaS「ものしりAI（monoshiri.ai）」の企画・開発・運営。Next.js 15 + NestJS + AWS Bedrock Cohere Embed v4 + S3 Vectors で構築したマルチテナント型RAGプラットフォーム。">
+    <link rel="canonical" href="https://sharakova.github.io/projects/monoshiri.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ものしりAI - 社内ナレッジベースAI SaaS">
+    <meta property="og:description" content="社内ドキュメントをアップロードするだけで自然言語でAIに聞けるSaaS「ものしりAI（monoshiri.ai）」の企画・開発・運営。">
+    <meta property="og:url" content="https://sharakova.github.io/projects/monoshiri.html">
+    <meta property="og:image" content="https://monoshiri.ai/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span aria-current="page">ものしりAI</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer" aria-label="monoshiri.ai を開く">
+                        <img src="../assets/monoshiri/logo.svg" alt="ものしりAI ロゴ" class="project-logo logo-invert" width="320" height="92" loading="eager">
+                    </a>
+                    <h1 class="page-title">ものしりAI</h1>
+                    <p class="page-lead">社内ナレッジベースAI SaaS — <a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer">monoshiri.ai</a></p>
+                    <div class="tags page-tags">
+                        <span class="tag">Next.js 15</span>
+                        <span class="tag">NestJS</span>
+                        <span class="tag">AWS Bedrock</span>
+                        <span class="tag">S3 Vectors</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">マルチテナントSaaS</span>
+                    </div>
+                </div>
+
+                <h2>プロジェクト概要</h2>
+                <p>
+                    <strong>ものしりAI（<a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer">monoshiri.ai</a>）</strong>は、社内ドキュメントをアップロードするだけで、管理画面・LINE・チャットウィジェットから自然言語でAIに聞ける企業向け社内ナレッジベースSaaSです。企画・設計・実装・運営を一気通貫で担当しているソロSaaSです。
+                </p>
+                <p>
+                    「社内にナレッジはあるのに、必要なときに見つからない」という組織共通の課題を、ベクトル検索（RAG）と生成AIで解決します。無料プランを提供し、ユーザー数無制限・最短1分で利用開始できる手軽さを強みにしています。
+                </p>
+
+                <h2>プロダクトの特徴</h2>
+
+                <h3>3ステップで導入可能</h3>
+                <ol>
+                    <li><strong>ドキュメントをアップロード：</strong> PDF / Word / Excel / PowerPoint / HTML / CSV / 画像をドラッグ&ドロップ</li>
+                    <li><strong>AIが自動解析：</strong> ベクトル検索用のインデックスを自動生成</li>
+                    <li><strong>AIに聞く：</strong> 管理画面・LINE・チャットウィジェットから自然言語で質問</li>
+                </ol>
+
+                <h3>マルチチャネル対応</h3>
+                <ul>
+                    <li><strong>管理画面：</strong> Next.js 15 + React 19 による SPA。社員が普段使う業務ツール感覚で利用可能</li>
+                    <li><strong>LINE 連携：</strong> 公式アカウントからトーク形式で質問。外出先や現場からすぐに確認</li>
+                    <li><strong>チャットウィジェット：</strong> 自社サイトに埋め込み可能。訪問者の問い合わせをAIが24時間自動回答</li>
+                    <li><strong>MCP 連携：</strong> Claude Desktop / Codex / Dify 等から MCP プロトコルで社内ナレッジを参照</li>
+                </ul>
+
+                <h3>エンタープライズ品質のセキュリティ</h3>
+                <ul>
+                    <li>国内データセンター（AWS 東京リージョン）でデータを保管</li>
+                    <li>保存・通信ともに暗号化（KMS / TLS）</li>
+                    <li>テナント間のデータ完全分離（ベクトルインデックスも tenant × folder 単位で分離）</li>
+                    <li>フォルダ単位のアクセス制御（admin / manager / member の3ロール）</li>
+                    <li>顧客データは AI の学習に一切利用しない</li>
+                    <li>MFA（TOTP）・ソーシャルログイン・JWT + リフレッシュトークンによる認証</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+
+                <h3>フロントエンド</h3>
+                <ul>
+                    <li><strong>Next.js 15 (App Router):</strong> LP と管理画面を別アプリに分離し、LP は静的エクスポート + CloudFront で配信</li>
+                    <li><strong>React 19 / TypeScript:</strong> Server Components と Client Components を明確に分離し、LCP を最小化</li>
+                    <li><strong>Tailwind CSS v4:</strong> ユーティリティファーストで高速にデザイン反復</li>
+                    <li><strong>next-intl:</strong> 日本語 / 英語 / 中国語 / 韓国語の4言語対応</li>
+                </ul>
+
+                <h3>バックエンド</h3>
+                <ul>
+                    <li><strong>NestJS + Fastify:</strong> Repository パターンで責務を分離したモジュラー構造</li>
+                    <li><strong>Prisma v6 + MySQL 8.0:</strong> 本番は Aurora MySQL Serverless v2、ローカルは Docker の統一構成</li>
+                    <li><strong>自前 JWT 認証:</strong> bcrypt + MFA(TOTP) + ソーシャルログイン + リフレッシュトークン</li>
+                </ul>
+
+                <h3>AI / ベクトル検索</h3>
+                <ul>
+                    <li><strong>AWS Bedrock Cohere Embed v4:</strong> 多言語対応の高精度 Embedding モデル</li>
+                    <li><strong>Amazon S3 Vectors:</strong> テナント×ナレッジ単位でベクトルインデックスを分離</li>
+                    <li><strong>Bedrock Claude:</strong> 回答生成とハルシネーション抑制のプロンプト設計</li>
+                    <li><strong>Lambda ベクトル化パイプライン:</strong> アップロードイベントでファイルをチャンク分割・Embedding・インデックス登録</li>
+                </ul>
+
+                <h3>課金・決済</h3>
+                <ul>
+                    <li><strong>Stripe Checkout Sessions:</strong> Free / Light / Standard / Pro の4プラン</li>
+                    <li><strong>Webhook 冪等処理:</strong> webhook_events テーブルで重複イベントを排除</li>
+                    <li><strong>クォータ管理:</strong> team_quotas / team_usage テーブルで月間AI回答数を制御</li>
+                </ul>
+
+                <h3>インフラ / DevOps</h3>
+                <ul>
+                    <li><strong>AWS ECS Fargate:</strong> API サーバを Blue/Green デプロイ</li>
+                    <li><strong>CloudFront + S3:</strong> LP を静的配信、CloudFront Function で i18n リダイレクト</li>
+                    <li><strong>Terraform:</strong> すべての AWS リソースを IaC で管理</li>
+                    <li><strong>SES / KMS / Secrets Manager:</strong> メール送信・暗号化・シークレット管理</li>
+                </ul>
+
+                <h2>システムアーキテクチャ</h2>
+
+                <h3>ベクトル化フロー</h3>
+                <ol>
+                    <li><strong>アップロード:</strong> ユーザーが管理画面からドキュメントをアップロード（S3 に保存）</li>
+                    <li><strong>S3 イベント通知:</strong> S3 → SQS → Lambda の非同期パイプラインを起動</li>
+                    <li><strong>テキスト抽出:</strong> PDF / Office ドキュメント / 画像(OCR) からテキストを抽出</li>
+                    <li><strong>チャンク分割:</strong> 意味的なまとまりを保ちながら最適サイズに分割</li>
+                    <li><strong>Embedding 生成:</strong> Bedrock Cohere Embed v4 でベクトル化</li>
+                    <li><strong>インデックス登録:</strong> S3 Vectors にテナント×ナレッジ単位で保存</li>
+                </ol>
+
+                <h3>RAG 質問回答フロー</h3>
+                <ol>
+                    <li><strong>質問受付:</strong> 管理画面・LINE・Widget・MCP のいずれかからクエリを受信</li>
+                    <li><strong>クエリベクトル化:</strong> ユーザー質問を Cohere Embed v4 でベクトル化</li>
+                    <li><strong>類似検索:</strong> S3 Vectors から関連度の高いチャンクを抽出（tenant + folder でアクセス権フィルタ）</li>
+                    <li><strong>回答生成:</strong> 検索結果をコンテキストに Bedrock Claude へプロンプト投入</li>
+                    <li><strong>ソース明示:</strong> 回答とともに参照元ドキュメントへのリンクを返却</li>
+                    <li><strong>ストリーミング配信:</strong> SSE で生成中の回答をリアルタイム表示</li>
+                </ol>
+
+                <h2>設計上の工夫</h2>
+
+                <h3>1. ベクトルインデックスの tenant × folder 分離</h3>
+                <p>
+                    S3 Vectors インデックスを <code>{tenantId}-{folderId}</code> 単位で分離。これにより、マルチテナント環境でもアクセス権ごとに検索空間が物理分離され、情報漏洩リスクを構造的に排除。
+                </p>
+
+                <h3>2. LP の徹底した SEO 対応</h3>
+                <ul>
+                    <li>ロケール別 canonical + hreflang alternates を全ページ出力</li>
+                    <li>Organization / SoftwareApplication / FAQPage / HowTo / Product / BreadcrumbList の JSON-LD 構造化データ</li>
+                    <li><code>llms.txt</code> を配信し、AI検索時代の LLMO にも対応</li>
+                    <li>GPTBot / ClaudeBot / PerplexityBot / Google-Extended など主要AIクローラーを robots.txt で明示的に許可</li>
+                </ul>
+
+                <h3>3. マルチテナント認可の徹底</h3>
+                <p>
+                    Controller → Service → Repository の各層で <code>teamId</code> スコープを強制。リクエスト毎のガード（AuthGuard + RolesGuard）でテナント横断アクセスを防止。Prisma クエリには必ず teamId のWHERE句を付与する設計。
+                </p>
+
+                <h3>4. 課金 Webhook の冪等性</h3>
+                <p>
+                    Stripe の Webhook は同一イベントが重複配送されうるため、<code>webhook_events</code> テーブルで event_id を記録し、二重処理を防止。決済と権限付与のトランザクション整合性を担保。
+                </p>
+
+                <h2>担当領域</h2>
+                <p>
+                    ソロSaaSとして以下すべてを担当しています：
+                </p>
+                <ul>
+                    <li>プロダクト企画・事業設計・価格戦略</li>
+                    <li>UI/UX デザイン・LP コピーライティング</li>
+                    <li>フロントエンド実装（Next.js / React / Tailwind）</li>
+                    <li>バックエンド実装（NestJS / Prisma / MySQL）</li>
+                    <li>ベクトル化パイプライン・RAG 実装（Bedrock / S3 Vectors / Lambda）</li>
+                    <li>課金システム実装（Stripe）</li>
+                    <li>インフラ構築（Terraform / AWS ECS / CloudFront / Aurora）</li>
+                    <li>セキュリティ設計・プライバシーポリシー / 利用規約の起草</li>
+                    <li>SEO / コンテンツマーケティング・ブログ記事執筆</li>
+                    <li>カスタマーサポート・問い合わせ対応</li>
+                </ul>
+
+                <h2>技術的な学び</h2>
+                <ul>
+                    <li>S3 Vectors（GA 直後の新サービス）を本番採用した際のインデックス設計と運用ノウハウ</li>
+                    <li>マルチテナント SaaS におけるデータ分離・課金・認可の実装パターン</li>
+                    <li>Next.js 15 App Router での SEO 最適化（canonical / hreflang / 構造化データ / LCP）</li>
+                    <li>Stripe Checkout と Webhook の冪等処理、プラン変更に伴うプロレーション処理</li>
+                    <li>LINE Messaging API・MCP プロトコルなど複数チャネルへの単一RAGコア統合</li>
+                    <li>ソロSaaS運営における「何を作らないか」の判断軸</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>ものしりAI のサービスサイトはこちら</p>
+                    <a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer" class="btn">monoshiri.ai を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

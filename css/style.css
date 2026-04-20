@@ -543,6 +543,24 @@ section[id] {
     margin-bottom: 0.5rem;
 }
 
+.project-logo {
+    display: block;
+    width: 280px;
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto 1.25rem;
+}
+
+/* ダークモードでは黒文字ロゴを白反転 */
+@media (prefers-color-scheme: dark) {
+    .project-logo.logo-invert {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
+:root[data-theme="dark"] .project-logo.logo-invert {
+    filter: invert(1) hue-rotate(180deg);
+}
+
 .page-title {
     font-size: clamp(1.9rem, 3vw, 2.35rem);
     margin: 0 0 0.35rem;
