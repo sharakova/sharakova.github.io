@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#e60012">
+    <title>ものしりメモ - Google Drive に保存する Markdown メモアプリ - sharakova Portfolio</title>
+    <meta name="description" content="Mac / iPad / ブラウザ向け Markdown メモアプリ「ものしりメモ（app.monoshiri.jp）」の企画・開発・運営。Tauri v2 (Rust) + CodeMirror 6 で、プレビュー画面を持たずに書いたその場で装飾される「インプレース・ライブスタイリング」を実装。保存先は Google Drive、Cloudflare Pages でブラウザ版も配信。">
+    <link rel="canonical" href="https://sharakova.github.io/projects/monoshiri-memo.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ものしりメモ - Google Drive に保存する Markdown メモアプリ">
+    <meta property="og:description" content="書いたそばから Markdown が整い、そのまま Google Drive に保存される Mac / iPad / ブラウザ向けメモアプリ。Tauri v2 + CodeMirror 6 で個人開発。">
+    <meta property="og:url" content="https://sharakova.github.io/projects/monoshiri-memo.html">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ものしりメモ",
+          "url": "https://app.monoshiri.jp",
+          "applicationCategory": "ProductivityApplication",
+          "operatingSystem": "macOS, iPadOS, Web",
+          "description": "書いたそばから Markdown が整い、そのまま Google Drive に保存される Mac / iPad / ブラウザ向けの Markdown メモアプリ。",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "小林 誠",
+            "alternateName": "sharakova",
+            "url": "https://sharakova.github.io/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharakova.github.io/" },
+            { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://sharakova.github.io/projects/" },
+            { "@type": "ListItem", "position": 3, "name": "ものしりメモ", "item": "https://sharakova.github.io/projects/monoshiri-memo.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../skills/index.html">Skills</a></li>
+                <li><a href="../projects/index.html">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="index.html">Projects</a>
+                <span>/</span>
+                <span aria-current="page">ものしりメモ</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <a href="https://app.monoshiri.jp" target="_blank" rel="noopener noreferrer" aria-label="ものしりメモ を開く">
+                        <img src="../assets/monoshiri-brand/logo.svg" alt="ものしり ロゴ" class="project-logo logo-invert" width="320" height="154" loading="eager">
+                    </a>
+                    <h1 class="page-title">ものしりメモ</h1>
+                    <p class="page-lead">Google Drive に保存する Markdown メモアプリ — <a href="https://app.monoshiri.jp" target="_blank" rel="noopener noreferrer">app.monoshiri.jp</a></p>
+                    <div class="tags page-tags">
+                        <span class="tag">Tauri v2</span>
+                        <span class="tag">Rust</span>
+                        <span class="tag">CodeMirror 6</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Astro</span>
+                        <span class="tag">Cloudflare Pages</span>
+                        <span class="tag">Google Drive API</span>
+                        <span class="tag">App Store</span>
+                    </div>
+                </div>
+
+
+                <dl class="meta-list">
+                    <div>
+                        <dt>分類</dt>
+                        <dd>ものしり — 運営中の自社プロダクト</dd>
+                    </div>
+                    <div>
+                        <dt>役割</dt>
+                        <dd>企画・UI設計・実装・LP制作・ストア申請・運営</dd>
+                    </div>
+                    <div>
+                        <dt>関連スキル</dt>
+                        <dd><a href="../skills/fullstack.html">フルスタック開発</a></dd>
+                    </div>
+                </dl>
+                <h2>プロジェクト概要</h2>
+                <p>
+                    <strong>ものしりメモ（<a href="https://app.monoshiri.jp" target="_blank" rel="noopener noreferrer">app.monoshiri.jp</a>）</strong>は、「デザインを気にせず書くだけで、きれいにまとまる」をコンセプトにした Markdown メモアプリです。Mac / iPad は App Store から、ブラウザ版は Google サインインだけで、いずれも無料で使えます。
+                </p>
+                <p>
+                    最大の特徴は<strong>プレビュー画面を持たないこと</strong>です。一般的な Markdown エディタは「編集ペイン」と「プレビューペイン」を左右に並べますが、ものしりメモは<strong>ソーステキストそのものをその場で装飾する（インプレース・ライブスタイリング）</strong>方式を採ります。見出しは打った瞬間に大きく色づき、表や Mermaid 図はカーソルが外れると図として描画され、クリックすればまた生の Markdown に戻って編集できます。書く行為と見た目の確認が分断されません。
+                </p>
+                <p>
+                    保存先は <strong>Google Drive のみ</strong>で、ローカルフォルダモードを持ちません。起動時に Drive と接続し、以降は自動保存だけ。「どこに保存したか分からないファイル」が増えず、Mac・iPad・ブラウザのどこからでも同じメモの続きが書けます。企画・UI設計・実装・LP・ストア申請・運営まで、すべてを個人で担当しています。
+                </p>
+
+                <h2>プロダクトの特徴</h2>
+
+                <h3>書いたそばから、整う</h3>
+                <ul>
+                    <li><strong>見出し・強調・コード：</strong> 記法を打った瞬間に、その記号を残したまま装飾が乗る</li>
+                    <li><strong>表：</strong> パイプ記法の表を、カーソルが離れると整形済みテーブルとして描画</li>
+                    <li><strong>Mermaid 図：</strong> <code>```mermaid</code> ブロックをその場でフローチャートとして描画</li>
+                    <li><strong>チェックリスト：</strong> <code>- [ ]</code> がクリック可能なチェックボックスに変わり、押すと本文が書き換わる</li>
+                    <li><strong>リンクプレビュー：</strong> 貼った URL の OGP を取得し、段落の下にカード表示</li>
+                    <li><strong>スラッシュコマンド：</strong> 行頭で <code>/</code> を打つと Notion 風のコマンドパレットが開く</li>
+                </ul>
+
+                <h3>保存を意識しなくていい</h3>
+                <ul>
+                    <li>編集のたびにデバウンス保存 + フォーカスが外れたタイミングでも保存。手動保存の操作は存在しない</li>
+                    <li>ファイル本体はユーザー自身の Google Drive に保存され、こちらのサーバーには置かない</li>
+                    <li>画像や添付ファイルは Drive 上の <code>images/</code> / <code>files/</code> に自動整理してリンクを挿入</li>
+                </ul>
+
+                <h3>3つの見た目、2つの端末、12の言語</h3>
+                <ul>
+                    <li>テーマは ライト / セピア / ダークの3種類、文字サイズは 小 / 中 / 大</li>
+                    <li>Mac のキーボード執筆と iPad のタッチ操作の双方を前提に設計（ハードウェアキーボード接続にも対応）</li>
+                    <li>ランディングページは日本語・英語・中国語（繁/簡）・韓国語・フランス語・ドイツ語・イタリア語・スペイン語・ポルトガル語・ヒンディー語・インドネシア語の12言語対応</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+
+                <h3>デスクトップ / モバイルアプリ</h3>
+                <ul>
+                    <li><strong>Tauri v2（Rust）:</strong> Electron より遥かに軽量なネイティブシェル。macOS / iPadOS 版を同一コードから生成</li>
+                    <li><strong>CodeMirror 6:</strong> エディタの中核。装飾はすべて自前の Decoration 実装</li>
+                    <li><strong>Vite + TypeScript（Vanilla）:</strong> フレームワークを使わず、エディタ体験に必要な部分だけを持つ軽量構成</li>
+                    <li><strong>Mermaid:</strong> ダイアグラムのインライン描画</li>
+                </ul>
+
+                <h3>ブラウザ版 / ランディングページ</h3>
+                <ul>
+                    <li><strong>Cloudflare Pages + Pages Functions:</strong> ブラウザ版アプリと LP を同一ドメインで配信</li>
+                    <li><strong>Astro + Tailwind CSS v4:</strong> LP を静的生成。12言語分のルートをビルド時に出力</li>
+                    <li><strong>サーバーサイド OAuth:</strong> リフレッシュトークンは httpOnly Cookie に格納し、JavaScript から触れない設計</li>
+                </ul>
+
+                <h3>ストレージ / 認証</h3>
+                <ul>
+                    <li><strong>Google Drive API:</strong> ファイル一覧・読み書き・フォルダ作成をすべて Drive の file ID ベースで操作</li>
+                    <li><strong>OAuth 2.0 + PKCE（ループバックリダイレクト）:</strong> デスクトップ版はローカルポートで認可コードを受け取り、リフレッシュトークンを端末内にのみ保存</li>
+                    <li><strong>スコープは <code>drive.file</code> のみ:</strong> アプリが作成した／ユーザーが明示的に開いたファイルにしかアクセスしない</li>
+                </ul>
+
+                <h2>アーキテクチャ：1つのコードベースで3つの配布形態</h2>
+                <p>
+                    デスクトップ版・iPad 版・ブラウザ版は、<strong>同じフロントエンドのソースを共有</strong>しています。これを可能にしているのが「Rust 呼び出しを1ファイルに閉じ込める」設計です。
+                </p>
+                <ol>
+                    <li><strong>境界を1ファイルに集約:</strong> Rust コマンドの呼び出し（<code>invoke</code>）はすべて <code>api.ts</code> の薄いラッパー経由とし、UI コンポーネントからは直接呼ばない</li>
+                    <li><strong>ビルド時にすげ替える:</strong> Web ビルドでは Vite のエイリアスで Tauri API をシムに差し替え、同じ呼び出しが Drive REST API と Cloudflare Pages Functions に流れる</li>
+                    <li><strong>結果:</strong> 機能追加は基本的に1箇所の実装で3プラットフォームに反映される。ネイティブ固有の処理（OAuth のループバック受信など）だけが Rust 側に残る</li>
+                </ol>
+
+                <h2>設計上の工夫</h2>
+
+                <h3>1. ブロック装飾は StateField、行内装飾は ViewPlugin</h3>
+                <p>
+                    CodeMirror 6 では、行を丸ごと置き換えるブロック装飾を ViewPlugin から返すと実行時例外になります（<code>Block decorations may not be specified via plugins</code>）。そのため表・Mermaid・リンクプレビューは StateField、見出し背景やチェックボックスなどの行内装飾は ViewPlugin、と<strong>制約に沿って明確に分離</strong>しています。
+                </p>
+
+                <h3>2. 非同期な副作用を純粋な StateField から追い出す</h3>
+                <p>
+                    リンクプレビューは URL のメタデータ取得という非同期処理を伴い、純粋関数である StateField 内では実行できません。取得は専用の ViewPlugin が担い、完了時に StateEffect を dispatch して StateField 側が再構築する、という<strong>副作用と状態の分離</strong>で解決しています。
+                </p>
+
+                <h3>3. 装飾の優先度を明示して「色の勝敗」を制御する</h3>
+                <p>
+                    シンタックスハイライトのスパンが内側で <code>color</code> を指定するため、CSS の <code>!important</code> では自前の色が勝てません。装飾プラグインの優先度を最上位に設定し、色指定スパンがハイライトの<strong>内側に入れ子になるよう順序を制御</strong>しています。
+                </p>
+
+                <h3>4. IME と undo を壊さないコマンドパレット</h3>
+                <p>
+                    スラッシュコマンドの入力中の文字列を、別途の入力欄ではなく<strong>ドキュメント本文そのもの</strong>に置いています。これにより日本語入力（IME）の変換も undo 履歴もエディタ標準のまま動作し、コマンド確定時に入力した <code>/…</code> の範囲ごと置換します。
+                </p>
+
+                <h3>5. 「非機微スコープ」を選ぶという設計判断</h3>
+                <p>
+                    Google Drive 全体を読める <code>drive</code> スコープではなく <code>drive.file</code> を選んだことで、ユーザーのプライバシーを構造的に守りつつ、Google の OAuth 検証や制限付きスコープのセキュリティ審査（CASA）を回避し、<strong>個人開発でも一般公開できる配布経路</strong>を確保しました。機能要件とコンプライアンス要件を同時に満たす選択です。
+                </p>
+
+                <h2>担当領域</h2>
+                <ul>
+                    <li>プロダクト企画・コンセプト設計・UI/UX デザイン</li>
+                    <li>エディタ実装（CodeMirror 6 の装飾・キーマップ・コマンドパレット）</li>
+                    <li>ネイティブ層実装（Rust / Tauri コマンド・Google Drive クライアント・OAuth）</li>
+                    <li>ブラウザ版実装（Cloudflare Pages Functions によるサーバーサイド認証）</li>
+                    <li>ランディングページ制作（Astro / Tailwind）と12言語のコピーライティング</li>
+                    <li>App Store 申請（Mac / iPad の署名・ビルド番号運用・審査対応）</li>
+                    <li>プライバシーポリシー起草・リリースノート運用</li>
+                </ul>
+
+                <h2>技術的な学び</h2>
+                <ul>
+                    <li>CodeMirror 6 の装飾モデル（StateField / ViewPlugin / Decoration の使い分けと優先度）</li>
+                    <li>Tauri v2 での macOS / iPadOS 同時開発と、App Store 配布に必要な署名・エクスポート設定の勘所</li>
+                    <li>同一フロントエンドをネイティブと Web の両方で動かすための「境界の切り方」</li>
+                    <li>OAuth 2.0 + PKCE のループバック実装と、リフレッシュトークンの安全な保管（端末内 / httpOnly Cookie）</li>
+                    <li>OAuth スコープの選択がプロダクトの配布可能性そのものを左右するという学び</li>
+                    <li>Astro での多言語静的サイト構築（hreflang・ロケール別ルーティング）</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>ものしりメモは無料でお使いいただけます</p>
+                    <a href="https://app.monoshiri.jp" target="_blank" rel="noopener noreferrer" class="btn">app.monoshiri.jp を見る</a>
+                    <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%AE%E3%81%97%E3%82%8A%E3%83%A1%E3%83%A2/id6792526963" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">App Store で見る</a>
+                </div>
+
+                <div class="related">
+                    <h2>関連するスキル</h2>
+                    <ul class="link-row">
+                        <li><a class="link-chip" href="../skills/fullstack.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>フルスタック開発</a></li>
+                    </ul>
+                </div>
+
+                <div class="related">
+                    <h2>ほかのプロジェクト</h2>
+                    <nav class="pager" aria-label="プロジェクトの前後ナビゲーション">
+                        <a class="pager-prev" href="monoshiri.html">
+                            <span class="pager-dir">← 前のプロジェクト</span>
+                            <span class="pager-name">ものしりAI</span>
+                        </a>
+                        <a class="pager-next" href="monoshiri-me.html">
+                            <span class="pager-dir">次のプロジェクト →</span>
+                            <span class="pager-name">ものしり問題集</span>
+                        </a>
+                    </nav>
+                    <p><a href="index.html">プロジェクト一覧をすべて見る →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

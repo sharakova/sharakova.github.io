@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#e60012">
+    <title>ものしり問題集 - 資格試験・教養のスマホ特化クイズサイト - sharakova Portfolio</title>
+    <meta name="description" content="資格試験（CISA / 基本情報技術者 / 簿記3級 / FP3級 / AWS CLF / TOEIC など）から国語・教養・スポーツまで、49試験・約2,900問を無料公開する学習サイト「ものしり問題集（monoshiri.me）」の企画・開発・運営。Astro + Tailwind CSS v4 + Cloudflare Pages による完全静的サイトで、学習記録は localStorage に保存。">
+    <link rel="canonical" href="https://sharakova.github.io/projects/monoshiri-me.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ものしり問題集 - 資格試験・教養のスマホ特化クイズサイト">
+    <meta property="og:description" content="49試験・約2,900問を無料公開する学習サイト。Astro + Cloudflare Pages の完全静的構成で、サーバーもDBも持たずに運用。">
+    <meta property="og:url" content="https://sharakova.github.io/projects/monoshiri-me.html">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "ものしり問題集",
+          "url": "https://monoshiri.me",
+          "inLanguage": ["ja", "en"],
+          "description": "資格試験から一般教養まで、選択式の問題集を無料公開するスマホ特化の学習サイト。",
+          "author": {
+            "@type": "Person",
+            "name": "小林 誠",
+            "alternateName": "sharakova",
+            "url": "https://sharakova.github.io/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharakova.github.io/" },
+            { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://sharakova.github.io/projects/" },
+            { "@type": "ListItem", "position": 3, "name": "ものしり問題集", "item": "https://sharakova.github.io/projects/monoshiri-me.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../skills/index.html">Skills</a></li>
+                <li><a href="../projects/index.html">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="index.html">Projects</a>
+                <span>/</span>
+                <span aria-current="page">ものしり問題集</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="content">
+                <div class="page-intro">
+                    <a href="https://monoshiri.me" target="_blank" rel="noopener noreferrer" aria-label="ものしり問題集 を開く">
+                        <img src="../assets/monoshiri-brand/logo.svg" alt="ものしり ロゴ" class="project-logo logo-invert" width="320" height="154" loading="eager">
+                    </a>
+                    <h1 class="page-title">ものしり問題集</h1>
+                    <p class="page-lead">資格試験・教養のスマホ特化クイズサイト — <a href="https://monoshiri.me" target="_blank" rel="noopener noreferrer">monoshiri.me</a></p>
+                    <div class="tags page-tags">
+                        <span class="tag">Astro</span>
+                        <span class="tag">Tailwind CSS v4</span>
+                        <span class="tag">Cloudflare Pages</span>
+                        <span class="tag">Cloudflare Workers</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">静的サイト</span>
+                        <span class="tag">SEO</span>
+                    </div>
+                </div>
+
+
+                <dl class="meta-list">
+                    <div>
+                        <dt>分類</dt>
+                        <dd>ものしり — 運営中の自社プロダクト</dd>
+                    </div>
+                    <div>
+                        <dt>役割</dt>
+                        <dd>企画・情報設計・実装・コンテンツ設計・運用</dd>
+                    </div>
+                    <div>
+                        <dt>関連スキル</dt>
+                        <dd><a href="../skills/fullstack.html">フルスタック開発</a></dd>
+                    </div>
+                </dl>
+                <h2>プロジェクト概要</h2>
+                <p>
+                    <strong>ものしり問題集（<a href="https://monoshiri.me" target="_blank" rel="noopener noreferrer">monoshiri.me</a>）</strong>は、資格試験から一般教養まで幅広い分野の選択式問題を無料で公開している、スマホ特化の学習サイトです。登録不要・広告なしで、開いたその場から解き始められます。
+                </p>
+                <p>
+                    現在<strong>49試験・324教材・約2,900問</strong>を公開中。<strong>資格</strong>（CISA、基本情報技術者、ITパスポート、情報セキュリティマネジメント、AWS認定クラウドプラクティショナー、日商簿記3級、FP3級、危険物取扱者乙4、秘書検定3級、販売士3級、TOEIC）、<strong>国語</strong>（漢字の読み書き、四字熟語、ことわざ、慣用句、故事成語、敬語、語彙）、<strong>教養</strong>（歴史、科学、地理、防災、応急手当、消費者保護）、<strong>文化・スポーツ</strong>（世界遺産、音楽、美術、文学、サッカー、人気アニメ作品）まで、ジャンル横断で扱っています。
+                </p>
+                <p>
+                    技術的な主眼は「<strong>サーバーもデータベースも持たずに、どこまで実用的な学習サイトを作れるか</strong>」です。問題はすべて YAML で管理し、Astro でビルドして Cloudflare Pages に静的配信。学習記録は端末の localStorage に保存するため、バックエンドの運用コストが実質ゼロのまま、無料・無期限で公開し続けられる構成にしています。
+                </p>
+
+                <h2>プロダクトの特徴</h2>
+
+                <h3>スマホで「すきま時間に1問」</h3>
+                <ul>
+                    <li>登録・ログイン不要。URL を開けばすぐ出題が始まる</li>
+                    <li>正誤と回答速度を端末内（localStorage）に保存し、苦手な問題を可視化</li>
+                    <li>1画面1設問。片手・縦持ちの操作を前提としたレイアウト</li>
+                    <li>すべての設問に解説を付け、「なぜその選択肢が正解なのか」まで届ける</li>
+                </ul>
+
+                <h3>3階層のコンテンツモデル</h3>
+                <ul>
+                    <li><strong>試験（exam）:</strong> 「基本情報技術者」「日商簿記3級」などの単位。ジャンル・タグ・ランディング文を持つ</li>
+                    <li><strong>教材（material）:</strong> 試験の中の学習単位。1教材 = 1つの YAML ファイル</li>
+                    <li><strong>問題（problem）・設問（question）:</strong> 長文や状況設定を共有する問題の下に、複数の設問がぶら下がる構造。読解型・事例型の出題に対応</li>
+                </ul>
+
+                <h2>技術スタック</h2>
+                <ul>
+                    <li><strong>Astro 7:</strong> 全ページを静的生成。クライアント JavaScript は出題ロジックなど必要最小限に絞る</li>
+                    <li><strong>Tailwind CSS v4（Vite プラグイン）:</strong> モバイルファーストのスタイリング</li>
+                    <li><strong>YAML + Content Collections:</strong> 問題データをスキーマ付きで型検証。CMS もDBも持たない</li>
+                    <li><strong>Cloudflare Pages:</strong> GitHub 連携で push するたび自動ビルド・自動デプロイ</li>
+                    <li><strong>Cloudflare Pages Functions（Workers）:</strong> OGP 画像の動的生成（<code>workers-og</code>）と共有リンクの解決をエッジで処理</li>
+                    <li><strong>localStorage:</strong> 学習履歴の保存先。サーバーに個人の学習データを持たない設計</li>
+                    <li><strong>TypeScript / Ruby:</strong> サイト実装は TypeScript、コンテンツ検証スクリプト群は Ruby</li>
+                </ul>
+
+                <h2>SEO / LLMO 対応</h2>
+                <p>
+                    「〇〇 過去問」「〇〇 練習問題」といった検索需要に対して、<strong>試験ページ・教材ページを個別の静的ページとして持つ</strong>ことが構造的な強みになります。そのうえで次の実装を行っています。
+                </p>
+                <ul>
+                    <li><strong>lastmod をコンテンツの実日付から生成:</strong> sitemap の <code>lastmod</code> にビルド時刻を入れず、教材 YAML の作成日・更新日から算出。中身が変わっていないのに更新日だけ動く sitemap は、検索エンジンに無視される原因になるため</li>
+                    <li><strong>試験ごとのランディングセクション:</strong> 「何を学べるか」「対象範囲はどこまでか」を試験単位で記述し、一覧ページの薄いコンテンツ化を防ぐ</li>
+                    <li><strong>日本語 / 英語の多言語対応:</strong> ロケール別ルーティングと hreflang を出力。UI 文言に加え、コンテンツ自体の翻訳にも対応</li>
+                    <li><strong>動的 OGP 画像:</strong> 教材ごとの OGP 画像をエッジで生成し、SNS シェア時の見え方を最適化</li>
+                    <li><strong><code>llms.txt</code> の配信:</strong> 生成AI経由の流入（LLMO）を見据え、サイト構造を機械可読な形で提示</li>
+                </ul>
+
+                <h2>設計上の工夫</h2>
+
+                <h3>1. 問題の品質を仕組みで担保する</h3>
+                <p>
+                    問題文・選択肢・解説を<strong>テンプレートやスクリプトで量産しない</strong>ことをルール化しています。新規作成・改稿は専用の執筆スキル（AIエージェント向けの手順書）に従い、外部事実は出典付きで <code>knowledge/</code> に保存してから一問ずつ執筆・品質審査する運用です。学習コンテンツにおいて、誤った知識を配ることは無価値どころか有害だからです。
+                </p>
+
+                <h3>2. 検証をコミット前の機械チェックに落とす</h3>
+                <p>
+                    出典の妥当性、教材タイトルの整合、設問の品質、翻訳の対応漏れ、コンテンツ日付の妥当性を、それぞれ独立した検証スクリプトとして実装。ビルド前に機械的に落とせるものは人間のレビューに回さない、という分担にしています。
+                </p>
+
+                <h3>3. 「解ける範囲」を明示する</h3>
+                <p>
+                    アニメ作品などのシリーズものでは、各教材が扱う話数・章を明記し、<strong>その範囲の知識だけで正解が一つに定まる</strong>ように出題範囲を制約しています。出題の公平性と、ネタバレへの配慮を両立させるための設計です。
+                </p>
+
+                <h3>4. 運用コストをゼロに近づける</h3>
+                <p>
+                    静的サイト + localStorage + エッジ関数という構成により、サーバー・DB・認証基盤のいずれも持ちません。運用コストが発生しないため、<strong>収益化を前提とせずコンテンツを増やし続けられる</strong>という、個人開発サービスにとって決定的な自由度を確保しています。
+                </p>
+
+                <h2>担当領域</h2>
+                <ul>
+                    <li>サービス企画・情報設計・UI/UX デザイン</li>
+                    <li>サイト実装（Astro / Tailwind / TypeScript）</li>
+                    <li>エッジ関数実装（Cloudflare Workers による OGP 生成・共有リンク）</li>
+                    <li>コンテンツ設計・問題執筆・品質審査フローの構築</li>
+                    <li>検証スクリプト群の実装（Ruby）</li>
+                    <li>SEO / LLMO 設計、多言語対応</li>
+                    <li>デプロイパイプライン構築・運用</li>
+                </ul>
+
+                <h2>技術的な学び</h2>
+                <ul>
+                    <li>数百ページ規模の静的サイトにおけるコンテンツモデリングとビルド時間の付き合い方</li>
+                    <li>sitemap の <code>lastmod</code> をはじめとする、「正確さがランキングに効く」タイプの SEO 実装</li>
+                    <li>Cloudflare Workers による OGP 画像生成（画像処理をビルド時ではなくエッジに逃がす判断）</li>
+                    <li>AIエージェントを使ったコンテンツ制作を、品質を落とさず回すためのスキル設計と検証の自動化</li>
+                    <li>サーバーレスならぬ「サーバーもDBも無し」構成が、個人サービスの継続性に与える効果</li>
+                </ul>
+
+                <div class="cta-box">
+                    <p>ものしり問題集はすべて無料・登録不要でお使いいただけます</p>
+                    <a href="https://monoshiri.me" target="_blank" rel="noopener noreferrer" class="btn">monoshiri.me を見る</a>
+                    <a href="https://monoshiri.jp" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">ブランドサイトを見る</a>
+                </div>
+
+                <div class="related">
+                    <h2>関連するスキル</h2>
+                    <ul class="link-row">
+                        <li><a class="link-chip" href="../skills/fullstack.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>フルスタック開発</a></li>
+                    </ul>
+                </div>
+
+                <div class="related">
+                    <h2>ほかのプロジェクト</h2>
+                    <nav class="pager" aria-label="プロジェクトの前後ナビゲーション">
+                        <a class="pager-prev" href="monoshiri-memo.html">
+                            <span class="pager-dir">← 前のプロジェクト</span>
+                            <span class="pager-name">ものしりメモ</span>
+                        </a>
+                        <a class="pager-next" href="counseling.html">
+                            <span class="pager-dir">次のプロジェクト →</span>
+                            <span class="pager-name">オンラインカウンセリングプラットフォーム</span>
+                        </a>
+                    </nav>
+                    <p><a href="index.html">プロジェクト一覧をすべて見る →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

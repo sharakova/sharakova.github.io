@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#e60012">
     <title>sharakova - Portfolio | Security × AI × Full Stack</title>
-    <meta name="description" content="小林誠 (sharakova) のポートフォリオ。IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。ブランド『ものしり』（monoshiri.jp）として、社内ナレッジベースAI SaaS『ものしりAI』（monoshiri.ai）を企画・開発・運営中。">
+    <meta name="description" content="小林誠 (sharakova) のポートフォリオ。IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。ブランド『ものしり』（monoshiri.jp）として、社内ナレッジベースAI SaaS『ものしりAI』（monoshiri.ai）、Markdownメモアプリ『ものしりメモ』（app.monoshiri.jp）、学習サイト『ものしり問題集』（monoshiri.me）を企画・開発・運営中。">
     <link rel="canonical" href="https://sharakova.github.io/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta property="og:type" content="website">
     <meta property="og:title" content="sharakova - Portfolio | Security × AI × Full Stack">
-    <meta property="og:description" content="IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。ブランド『ものしり』（monoshiri.jp）として、社内ナレッジベースAI SaaS『ものしりAI』（monoshiri.ai）を企画・開発・運営中。">
+    <meta property="og:description" content="IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。ブランド『ものしり』（monoshiri.jp）として、『ものしりAI』『ものしりメモ』『ものしり問題集』を企画・開発・運営中。">
     <meta property="og:url" content="https://sharakova.github.io/">
     <meta name="twitter:card" content="summary">
     <script type="application/ld+json">
@@ -22,13 +22,15 @@
       "alternateName": "sharakova",
       "url": "https://sharakova.github.io/",
       "jobTitle": "Security × AI × Full Stack Engineer",
-      "description": "IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。ブランド『ものしり』（monoshiri.jp）として、社内ナレッジベースAI SaaS『ものしりAI』（monoshiri.ai）を企画・開発・運営。",
+      "description": "IT統制・セキュリティ、AI/RAGシステム開発、フルスタック開発、新規事業開発のエンジニア。ブランド『ものしり』（monoshiri.jp）として、社内ナレッジベースAI SaaS『ものしりAI』（monoshiri.ai）、Markdownメモアプリ『ものしりメモ』（app.monoshiri.jp）、学習サイト『ものしり問題集』（monoshiri.me）を企画・開発・運営。",
       "sameAs": [
         "https://github.com/sharakova",
         "https://www.linkedin.com/in/makoto-kobayashi-a4927697/",
         "https://x.com/sharakova",
         "https://monoshiri.jp",
-        "https://monoshiri.ai"
+        "https://monoshiri.ai",
+        "https://app.monoshiri.jp",
+        "https://monoshiri.me"
       ],
       "knowsAbout": [
         "IT General Controls",
@@ -38,7 +40,11 @@
         "AWS Bedrock",
         "Next.js",
         "NestJS",
-        "Multi-tenant SaaS"
+        "Multi-tenant SaaS",
+        "Tauri",
+        "CodeMirror",
+        "Astro",
+        "Cloudflare Workers"
       ],
       "worksFor": {
         "@type": "Organization",
@@ -125,29 +131,42 @@
                     「技術を通じて社会課題を解決すること」を信念とし、特にメンタルヘルス領域での事業創出に力を注いでいます。300万ダウンロードを達成したファッションアプリの事業売却経験もあり、技術面だけでなくビジネス面でのサポートも可能です。
                 </p>
                 <p>
-                    2025年からは、「<a href="https://monoshiri.jp" target="_blank" rel="noopener noreferrer">ものしり</a>（monoshiri.jp）」というブランドで、社内ナレッジベースAI SaaS「<a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer">ものしりAI</a>（monoshiri.ai）」を企画・開発・運営中。AWS Bedrock + S3 Vectors を用いたマルチテナント型の RAG プラットフォームをソロで構築しています。「知識を、事業の力に」をミッションに掲げ、将来的なコーポレートサイトとしてブランドサイトも立ち上げました。
+                    2025年からは、「<a href="https://monoshiri.jp" target="_blank" rel="noopener noreferrer">ものしり</a>（monoshiri.jp）」というブランドで、「知識を、事業の力に」をミッションに複数のプロダクトを企画・開発・運営しています。すべて個人で、企画からインフラ・運用まで一気通貫で手掛けています。
+                </p>
+                <ul>
+                    <li><strong><a href="projects/monoshiri.html">ものしりAI</a>（<a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer">monoshiri.ai</a>）：</strong> 社内ドキュメントをアップロードするだけで、管理画面・LINE・チャットウィジェットからAIに聞ける社内ナレッジベースSaaS。AWS Bedrock + S3 Vectors によるマルチテナント RAG 基盤。</li>
+                    <li><strong><a href="projects/monoshiri-memo.html">ものしりメモ</a>（<a href="https://app.monoshiri.jp" target="_blank" rel="noopener noreferrer">app.monoshiri.jp</a>）：</strong> 書いたそばから Markdown が整い、そのまま Google Drive に保存されるメモアプリ。Tauri v2（Rust）+ CodeMirror 6 で Mac / iPad / ブラウザに対応。</li>
+                    <li><strong><a href="projects/monoshiri-me.html">ものしり問題集</a>（<a href="https://monoshiri.me" target="_blank" rel="noopener noreferrer">monoshiri.me</a>）：</strong> 資格試験から一般教養まで49試験・約2,900問を無料公開する学習サイト。Astro + Cloudflare Pages の完全静的構成。</li>
+                </ul>
+                <p>
+                    「知識をためる（AI）・知識を書き留める（メモ）・知識を身につける（問題集）」という3つの入口から、個人と組織の知識活用を支援することを目指しています。
                 </p>
                 <p>
                     PHP/Laravel、Next.js、Python、AWSを中心としたフルスタック開発が得意で、0→1のプロダクト開発から大規模システムの構築まで、あらゆるフェーズで価値を提供します。
                 </p>
 
-                <h3>主な実績</h3>
-                <ul>
-                    <li>ブランド「<a href="https://monoshiri.jp" target="_blank" rel="noopener noreferrer">ものしり</a>」として、社内ナレッジベースAI SaaS「<a href="https://monoshiri.ai" target="_blank" rel="noopener noreferrer">ものしりAI</a>」の企画・開発・運営（2025〜）</li>
-                    <li>日本初のリアルタイムオンラインカウンセリングプラットフォームの企画・開発</li>
-                    <li>企業向けメンタルヘルスSaaSの構築（50人未満の事業場向け）</li>
-                    <li>ファッションアプリの0→1開発から300万DL達成、事業売却まで</li>
-                    <li>大手漫画プラットフォームのバックエンド構築</li>
-                    <li>社内RAGシステムの開発（AWS Bedrock + Kendra）</li>
-                </ul>
-
-                <h3>得意領域</h3>
-                <ul>
-                    <li><strong>セキュリティ・IT統制：</strong> IT全般統制、PCI DSS、ISMS、脆弱性診断</li>
-                    <li><strong>AI/RAG開発：</strong> AWS Bedrock、ChatGPT、Kendra、OpenSearch</li>
-                    <li><strong>フルスタック開発：</strong> PHP/Laravel、Next.js/React、Python、AWS</li>
-                    <li><strong>事業開発：</strong> 0→1プロダクト開発、事業企画、グロースハック</li>
-                </ul>
+                <h3>領域ごとの実績</h3>
+                <dl class="meta-list">
+                    <div>
+                        <dt>セキュリティ・IT統制</dt>
+                        <dd>キャリアの出発点。IT全般統制、PCI DSS、ISMS、脆弱性診断（<a href="skills/security.html">詳しく見る</a>）</dd>
+                    </div>
+                    <div>
+                        <dt>事業開発</dt>
+                        <dd>ファッションアプリの0→1開発から300万DL達成、事業売却（Exit）まで。メンタルヘルス領域でのサービス立ち上げ（<a href="skills/business.html">詳しく見る</a>）</dd>
+                    </div>
+                    <div>
+                        <dt>システム開発</dt>
+                        <dd>大手漫画プラットフォームのバックエンド構築、社内RAGシステムの開発（AWS Bedrock + Kendra）（<a href="skills/fullstack.html">詳しく見る</a>）</dd>
+                    </div>
+                    <div>
+                        <dt>自社プロダクト</dt>
+                        <dd>2025年〜。ブランド「ものしり」として、<a href="projects/monoshiri.html">ものしりAI</a>・<a href="projects/monoshiri-memo.html">ものしりメモ</a>・<a href="projects/monoshiri-me.html">ものしり問題集</a>を個人で企画・開発・運営</dd>
+                    </div>
+                </dl>
+                <p>
+                    詳しい対応領域は<a href="skills/index.html">スキル一覧</a>、個々の取り組みは<a href="projects/index.html">プロジェクト一覧</a>にまとめています。
+                </p>
             </div>
         </div>
     </section>
@@ -210,16 +229,24 @@
                     <span class="card-link">詳しく見る →</span>
                 </a>
             </div>
+            <div class="section-actions">
+                <a href="skills/index.html" class="btn">スキル一覧を見る →</a>
+            </div>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">革新的なプロダクトで、社会に価値を提供</p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">関わり方ごとに分類した、8件のプロジェクト</p>
+
+            <div class="group-head">
+                <h3>ものしり — 運営中の自社プロダクト<span class="group-count">3 projects</span></h3>
+                <p>ブランド「ものしり（monoshiri.jp）」として、企画からインフラ・運用まですべて個人で手がけているプロダクト。2025年〜</p>
+            </div>
             <div class="grid-2">
                 <a href="projects/monoshiri.html" class="project-card">
-                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #1D4ED8 0%, #8B5CF6 100%);">
+                    <div class="project-image">
                         <img src="assets/monoshiri/icon.svg" alt="ものしりAI アイコン" width="64" height="64" loading="lazy" style="width:64px;height:64px;">
                     </div>
                     <div class="project-content">
@@ -234,10 +261,54 @@
                             <span class="tag">Stripe</span>
                             <span class="tag">SaaS</span>
                         </div>
+                        <p class="card-role"><b>役割</b> 企画・設計・実装・運営（ソロSaaS）</p>
                     </div>
                 </a>
+                <a href="projects/monoshiri-memo.html" class="project-card">
+                    <div class="project-image">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pencil"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>ものしりメモ（app.monoshiri.jp）</h3>
+                        <p><strong>Google Drive に保存する Markdown メモアプリ</strong></p>
+                        <p>プレビュー画面を持たず、書いたその場で Markdown が装飾される「インプレース・ライブスタイリング」を実装したメモアプリ。Tauri v2（Rust）+ CodeMirror 6 で Mac / iPad / ブラウザに対応し、App Store でリリース済み。</p>
+                        <div class="tags">
+                            <span class="tag">Tauri v2</span>
+                            <span class="tag">Rust</span>
+                            <span class="tag">CodeMirror 6</span>
+                            <span class="tag">Cloudflare Pages</span>
+                            <span class="tag">Google Drive API</span>
+                        </div>
+                        <p class="card-role"><b>役割</b> 企画・UI設計・実装・LP制作・ストア申請・運営</p>
+                    </div>
+                </a>
+                <a href="projects/monoshiri-me.html" class="project-card">
+                    <div class="project-image">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-quiz"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>ものしり問題集（monoshiri.me）</h3>
+                        <p><strong>資格試験・教養のスマホ特化クイズサイト</strong></p>
+                        <p>CISA・基本情報・簿記3級・FP3級・TOEICなどの資格から国語・教養まで、49試験・約2,900問を無料公開。Astro + Cloudflare Pages の完全静的構成で、サーバーもDBも持たずに運用。</p>
+                        <div class="tags">
+                            <span class="tag">Astro</span>
+                            <span class="tag">Tailwind CSS v4</span>
+                            <span class="tag">Cloudflare Workers</span>
+                            <span class="tag">静的サイト</span>
+                            <span class="tag">SEO</span>
+                        </div>
+                        <p class="card-role"><b>役割</b> 企画・情報設計・実装・コンテンツ設計・運用</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="group-head">
+                <h3>サービスの立ち上げ<span class="group-count">3 projects</span></h3>
+                <p>新規サービスの開発に、立ち上げの段階から関わったプロジェクト。</p>
+            </div>
+            <div class="grid-2">
                 <a href="projects/counseling.html" class="project-card">
-                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="project-image">
                         <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-heart"></use></svg>
                     </div>
                     <div class="project-content">
@@ -250,10 +321,11 @@
                             <span class="tag">WebRTC</span>
                             <span class="tag">AWS</span>
                         </div>
+                        <p class="card-role"><b>役割</b> 企画・開発</p>
                     </div>
                 </a>
                 <a href="projects/mental-health-saas.html" class="project-card">
-                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="project-image">
                         <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-building"></use></svg>
                     </div>
                     <div class="project-content">
@@ -265,11 +337,12 @@
                             <span class="tag">Laravel</span>
                             <span class="tag">健康経営</span>
                         </div>
+                        <p class="card-role"><b>役割</b> 開発</p>
                     </div>
                 </a>
                 <a href="projects/fashion-app.html" class="project-card">
-                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>
+                    <div class="project-image">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-rocket"></use></svg>
                     </div>
                     <div class="project-content">
                         <h3>ファッションコーディネートアプリ</h3>
@@ -281,25 +354,18 @@
                             <span class="tag">Rails</span>
                             <span class="tag">Exit</span>
                         </div>
+                        <p class="card-role"><b>役割</b> 事業企画・開発マネジメント・アプリ / バックエンド開発・グロース・パートナーシップ</p>
                     </div>
                 </a>
-                <a href="projects/corporate-rag.html" class="project-card">
-                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ai"></use></svg>
-                    </div>
-                    <div class="project-content">
-                        <h3>社内RAG質問回答システム</h3>
-                        <p><strong>AIで業務効率を劇的に向上</strong></p>
-                        <p>Notion、Google Drive、Backlog等を統合し、Slackから質問できるAI Bot。AWS Bedrock + Kendraで実装。</p>
-                        <div class="tags">
-                            <span class="tag">AWS Bedrock</span>
-                            <span class="tag">Kendra</span>
-                            <span class="tag">RAG</span>
-                        </div>
-                    </div>
-                </a>
+            </div>
+
+            <div class="group-head">
+                <h3>システム開発・改善<span class="group-count">2 projects</span></h3>
+                <p>既存サービス・社内向けシステムの開発を担当したプロジェクト。</p>
+            </div>
+            <div class="grid-2">
                 <a href="projects/manga-platform.html" class="project-card">
-                    <div class="project-image" style="--badge-bg: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="project-image">
                         <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
                     </div>
                     <div class="project-content">
@@ -311,8 +377,29 @@
                             <span class="tag">API</span>
                             <span class="tag">大規模</span>
                         </div>
+                        <p class="card-role"><b>役割</b> バックエンドAPI開発・パフォーマンス最適化</p>
                     </div>
                 </a>
+                <a href="projects/corporate-rag.html" class="project-card">
+                    <div class="project-image">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ai"></use></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>社内RAG質問回答システム</h3>
+                        <p><strong>AIで業務効率を劇的に向上</strong></p>
+                        <p>Notion、Google Drive、Backlog等を統合し、Slackから質問できるAI Bot。AWS Bedrock + Kendraで実装。</p>
+                        <div class="tags">
+                            <span class="tag">AWS Bedrock</span>
+                            <span class="tag">Kendra</span>
+                            <span class="tag">RAG</span>
+                        </div>
+                        <p class="card-role"><b>役割</b> 開発</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="section-actions">
+                <a href="projects/index.html" class="btn">プロジェクト一覧を見る →</a>
             </div>
         </div>
     </section>

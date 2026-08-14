@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#e60012">
+    <title>Skills - スキル一覧 - sharakova Portfolio</title>
+    <meta name="description" content="小林誠 (sharakova) のスキル一覧。セキュリティ・IT統制（IT全般統制 / PCI DSS / ISMS / 脆弱性診断）、AI/RAGシステム開発（AWS Bedrock / Kendra / OpenSearch）、フルスタック開発（PHP・Laravel / Next.js・React / Python / AWS）、事業開発・グロース（0→1 / 事業企画 / グロースハック / 海外展開）の4領域。">
+    <link rel="canonical" href="https://sharakova.github.io/skills/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Skills - スキル一覧 - sharakova Portfolio">
+    <meta property="og:description" content="セキュリティ・IT統制、AI/RAGシステム開発、フルスタック開発、事業開発・グロースの4領域。関連するプロジェクトとあわせて掲載。">
+    <meta property="og:url" content="https://sharakova.github.io/skills/">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "Skills - スキル一覧",
+          "url": "https://sharakova.github.io/skills/",
+          "inLanguage": "ja",
+          "about": "小林誠 (sharakova) の対応領域の一覧",
+          "author": {
+            "@type": "Person",
+            "name": "小林 誠",
+            "alternateName": "sharakova",
+            "url": "https://sharakova.github.io/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharakova.github.io/" },
+            { "@type": "ListItem", "position": 2, "name": "Skills", "item": "https://sharakova.github.io/skills/" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (() => {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.dataset.theme = theme;
+                }
+            } catch {
+                // ignore
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../index.html" class="logo">sharakova</a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="index.html">Skills</a></li>
+                <li><a href="../projects/index.html">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" type="button" aria-label="テーマ切り替え">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M12 3a1 1 0 0 1 1 1v1" />
+                        <path d="M12 19a1 1 0 0 1 1 1v1" />
+                        <path d="M5 12a1 1 0 0 1 1-1h1" />
+                        <path d="M17 12a1 1 0 0 1 1-1h1" />
+                        <path d="M7.05 7.05a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M14.84 14.84a1 1 0 0 1 1.41 0l.7.7" />
+                        <path d="M16.95 7.05a1 1 0 0 0-1.41 0l-.7.7" />
+                        <path d="M9.16 14.84a1 1 0 0 0-1.41 0l-.7.7" />
+                        <circle cx="12" cy="12" r="3.25" />
+                    </svg>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M4 7h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-tight">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span aria-current="page">Skills</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-topless">
+        <div class="container">
+            <div class="page-intro">
+                <h1 class="page-title">Skills</h1>
+                <p class="page-lead">対応できる4つの領域と、関連するプロジェクト</p>
+            </div>
+
+            <div class="grid-2">
+                <a href="security.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-lock"></use></svg>
+                        セキュリティ・IT統制
+                    </h3>
+                    <p class="card-lead">企業のセキュリティ体制構築とコンプライアンス対応</p>
+                    <ul>
+                        <li>IT全般統制・業務処理統制</li>
+                        <li>PCI DSS整備・運用</li>
+                        <li>ISMS取得支援</li>
+                        <li>脆弱性診断</li>
+                        <li>社内開発ルールの策定</li>
+                    </ul>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+                <a href="ai.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-ai"></use></svg>
+                        AI/RAGシステム開発
+                    </h3>
+                    <p class="card-lead">AIを活用した業務効率化とナレッジマネジメント</p>
+                    <ul>
+                        <li>AWS Bedrock / ChatGPT</li>
+                        <li>Kendra / OpenSearch / S3 Vectors</li>
+                        <li>ナレッジベース構築</li>
+                        <li>Slack Bot開発</li>
+                    </ul>
+                    <p class="card-role"><b>関連プロジェクト</b> ものしりAI／社内RAG質問回答システム</p>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+                <a href="fullstack.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-code"></use></svg>
+                        フルスタック開発
+                    </h3>
+                    <p class="card-lead">フロントエンドからバックエンド、インフラまで一貫した開発</p>
+                    <ul>
+                        <li>PHP / Laravel</li>
+                        <li>Next.js / React</li>
+                        <li>Python</li>
+                        <li>AWS Infrastructure</li>
+                    </ul>
+                    <p class="card-role"><b>関連プロジェクト</b> オンラインカウンセリング／企業向けメンタルヘルスSaaS／大手漫画プラットフォーム</p>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+                <a href="business.html" class="skill-card">
+                    <h3 class="title-with-icon">
+                        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-rocket"></use></svg>
+                        事業開発・グロース
+                    </h3>
+                    <p class="card-lead">0→1のプロダクト開発から事業成長、Exitまで</p>
+                    <ul>
+                        <li>0→1プロダクト開発</li>
+                        <li>事業企画・戦略立案</li>
+                        <li>グロースハック</li>
+                        <li>海外展開（アジア圏）</li>
+                    </ul>
+                    <p class="card-role"><b>関連プロジェクト</b> ものしりAI／オンラインカウンセリング／企業向けメンタルヘルスSaaS／ファッションアプリ</p>
+                    <span class="card-link">詳しく見る →</span>
+                </a>
+            </div>
+
+            <div class="section-actions">
+                <a href="../projects/index.html" class="btn">プロジェクト一覧を見る →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/makoto-kobayashi-a4927697/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/sharakova" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                    X
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2025 sharakova Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/site.js" defer></script>
+</body>
+</html>
