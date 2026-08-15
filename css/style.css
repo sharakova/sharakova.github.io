@@ -530,10 +530,24 @@ section[id] {
 
 .card-link {
     display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     margin-top: 1rem;
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--accent);
+}
+
+/* 矢印はテキスト記号ではなく SVG アイコンを使う */
+.icon-arrow {
+    width: 1.05em;
+    height: 1.05em;
+    transition: transform 180ms ease;
+}
+
+.project-card:hover .card-link .icon-arrow,
+.skill-card:hover .card-link .icon-arrow {
+    transform: translateX(3px);
 }
 
 /* Project cards ----------------------------------------------------- */
@@ -667,12 +681,10 @@ section[id] {
 
 .meta-list dt {
     margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.76rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--muted-2);
-    letter-spacing: 0.04em;
-    line-height: 2.1;
+    line-height: 1.9;
 }
 
 .meta-list dd {
@@ -772,12 +784,18 @@ section[id] {
 }
 
 .pager .pager-dir {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
     font-family: var(--font-mono);
     font-size: 0.74rem;
     font-weight: 600;
     color: var(--accent);
     letter-spacing: 0.04em;
+}
+
+.pager .pager-next .pager-dir {
+    justify-content: flex-end;
 }
 
 .pager .pager-name {
@@ -1250,5 +1268,9 @@ footer {
     .pager .pager-next {
         grid-column: 1;
         text-align: left;
+    }
+
+    .pager .pager-next .pager-dir {
+        justify-content: flex-start;
     }
 }

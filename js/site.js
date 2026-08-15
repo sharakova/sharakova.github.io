@@ -1,37 +1,9 @@
+// アイコンスプライトは各 HTML の <body> 先頭に直接埋め込んでいる。
+// （以前は assets/icons.svg を fetch していたが、キャッシュが残ると
+//   アイコンが消える・追加したアイコンが反映されない問題があったため）
+// スプライトを変更するときは assets/icons.svg を編集し、
+// tools/sync-sprite.py で全 HTML に反映する。
 (() => {
-  const injectSprite = async () => {
-    if (document.getElementById("svg-sprite")) return;
-
-    const currentScript =
-      document.currentScript ||
-      document.querySelector('script[src$="/js/site.js"], script[src$="../js/site.js"]');
-    if (!currentScript) return;
-
-    const scriptUrl = new URL(currentScript.src, window.location.href);
-    const iconsUrl = new URL("../assets/icons.svg", scriptUrl);
-
-    try {
-      const response = await fetch(iconsUrl.href, { cache: "force-cache" });
-      if (!response.ok) return;
-
-      const text = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, "image/svg+xml");
-      const svg = doc.querySelector("svg");
-      if (!svg) return;
-
-      svg.id = "svg-sprite";
-      svg.setAttribute("aria-hidden", "true");
-      svg.setAttribute("focusable", "false");
-
-      document.body.insertAdjacentElement("afterbegin", document.importNode(svg, true));
-    } catch {
-      // ignore
-    }
-  };
-
-  void injectSprite();
-
   const root = document.documentElement;
 
   const applyTheme = (theme) => {
