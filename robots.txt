@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /manga/
+Disallow: /lab/
 
 # AI crawlers - allow for LLMO
 User-agent: GPTBot

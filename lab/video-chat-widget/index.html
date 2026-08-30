@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#e60012">
+    <title>ビデオ通話ウィジェット クロスオリジン検証</title>
+    <!-- 検証用ページ。ポートフォリオの一部ではないので検索させない。 -->
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .lab-note {
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            padding: 20px;
+            background: var(--tint);
+            margin-bottom: 24px;
+        }
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .lab-fact {
+            border: 1px solid var(--rule);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            background: var(--paper);
+        }
+        .lab-fact dt {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 2px;
+        }
+        .lab-fact dd {
+            margin: 0;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            word-break: break-all;
+        }
+        .lab-ok { color: #15803d; }
+        .lab-ng { color: var(--accent); }
+        .lab-frame {
+            width: 100%;
+            height: 720px;
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            background: var(--paper);
+        }
+        .lab-steps { padding-left: 20px; }
+        .lab-steps li { margin-bottom: 6px; }
+        pre.lab-code {
+            background: #16161a;
+            color: #e7e7ec;
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            overflow-x: auto;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .lab-section { margin-bottom: 48px; }
+        .lab-section h2 { margin-bottom: 8px; }
+        .lab-lead { color: var(--muted); margin-top: 0; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container top-nav">
+            <a href="../../index.html" class="logo">sharakova</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 40px; padding-bottom: 80px; max-width: 900px;">
+        <h1>ビデオ通話ウィジェット クロスオリジン検証</h1>
+        <p class="lab-lead">
+            Cloudflare Workers に置いたウィジェットを、<strong>別ドメインのこのページに設置して</strong>動作を確かめるためのページです。
+            ウィジェットは「別ドメインから配信されて、設置先サイトの iframe で動く」のが本番の姿なので、
+            同一オリジンで試している限り検証されない箇所（カメラ権限の委譲、CSP、サードパーティストレージ）を、
+            ここで実際の経路のまま確認できます。
+        </p>
+
+        <div class="lab-note">
+            <strong>このページ自体の条件</strong>
+            <dl class="lab-grid" id="page-facts"></dl>
+        </div>
+
+        <section class="lab-section">
+            <h2>1. 手順</h2>
+            <ol class="lab-steps">
+                <li>
+                    別タブで
+                    <a href="https://video-chat-widget.autumn-field-242b.workers.dev/console/" target="_blank" rel="noopener noreferrer">オペレーターコンソール</a>
+                    を開き、担当者を選んで「待機を開始する」を押す
+                </li>
+                <li>このページに戻ると、右下のボタンに<strong>緑のドット</strong>が付く（＝別ドメイン越しに在席が届いている）</li>
+                <li>ウィジェットを開いて「導入の見積もりがほしい」と送る → AI が答えられず通話導線が前に出る</li>
+                <li>「今すぐビデオ通話でつなぐ」→ コンソール側で呼び出し音が鳴る → 「応答する」</li>
+                <li>双方でカメラ・マイクを許可するとビデオ通話が始まる</li>
+            </ol>
+            <p class="lab-lead">
+                カメラは1台しか使えないので、片方をスマートフォンか別ブラウザ（別プロファイル）で開くと確認しやすいです。
+            </p>
+        </section>
+
+        <section class="lab-section">
+            <h2>2. 自動診断</h2>
+            <p class="lab-lead">
+                下の枠は配信元ドメインの診断ページを <code>allow="camera; microphone"</code> 付きで埋め込んだものです。
+                クロスオリジン iframe の中からしか確認できない項目を実測しています。
+            </p>
+            <iframe
+                class="lab-frame"
+                src="https://video-chat-widget.autumn-field-242b.workers.dev/widget/diagnostics.html"
+                title="ウィジェット診断"
+                allow="camera; microphone"
+                referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+        </section>
+
+        <section class="lab-section">
+            <h2>3. このページに貼っている設置コード</h2>
+            <p class="lab-lead">実際のサイトに設置するときも、これをそのまま貼るだけです。</p>
+            <pre class="lab-code" id="snippet-view"></pre>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-note">検証用ページ（noindex）&nbsp;/&nbsp;&copy; 2025 sharakova Portfolio.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         ビデオ通話ウィジェットの設置コード
+         配信元は Cloudflare Workers。このページとは別オリジンなので、
+         本番と同じクロスオリジン経路で動作する。
+         ============================================================ -->
+    <script>
+    (function () {
+      var w = window, d = document;
+      w.__vcw = { apiUrl: "https://video-chat-widget.autumn-field-242b.workers.dev", position: "bottom-right" };
+      var s = d.createElement("script");
+      s.async = true;
+      s.src = "https://video-chat-widget.autumn-field-242b.workers.dev/widget/embed.js";
+      d.head.appendChild(s);
+    })();
+    </script>
+
+    <script>
+    // --- このページ側から見える条件を表示する ---
+    (function () {
+      var widgetOrigin = window.__vcw.apiUrl;
+      var facts = [
+        ["このページのオリジン", location.origin, location.origin !== widgetOrigin],
+        ["ウィジェットの配信元", widgetOrigin, true],
+        ["クロスオリジンか", location.origin !== widgetOrigin ? "はい（本番と同じ経路）" : "いいえ", location.origin !== widgetOrigin],
+        ["セキュアコンテキスト", window.isSecureContext ? "HTTPS" : "非HTTPS（カメラ不可）", window.isSecureContext]
+      ];
+
+      var dl = document.getElementById("page-facts");
+      dl.innerHTML = facts.map(function (f) {
+        return '<div class="lab-fact"><dt>' + f[0] + '</dt>'
+             + '<dd class="' + (f[2] ? "lab-ok" : "lab-ng") + '">' + f[1] + '</dd></div>';
+      }).join("");
+
+      // 実際に貼っているコードをそのまま見せる
+      document.getElementById("snippet-view").textContent =
+        '<script>\n' +
+        '(function () {\n' +
+        '  var w = window, d = document;\n' +
+        '  w.__vcw = { apiUrl: "' + widgetOrigin + '", position: "bottom-right" };\n' +
+        '  var s = d.createElement("script");\n' +
+        '  s.async = true;\n' +
+        '  s.src = "' + widgetOrigin + '/widget/embed.js";\n' +
+        '  d.head.appendChild(s);\n' +
+        '})();\n' +
+        '<\/script>';
+    })();
+    </script>
+</body>
+</html>
